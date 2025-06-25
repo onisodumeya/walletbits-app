@@ -9,9 +9,15 @@ import Menu from '../assets/svgs/menu-btn.svg'
 function Navbar() {
   const isMobile = useMediaQuery({ maxWidth: 1000 });
 
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setMenuOpen(prev => !prev);
+  };
+
 
   return (
-    <nav className='flex justify-between py-5 px-5 md:px-15  items-center'>
+    <nav className='flex justify-between py-5 px-5 md:px-15  items-center relative w-full'>
 
       <NavLink to="/" className='text-pink-400' ><h2 className='font-bold text-2xl'>WALLETBITS</h2></NavLink>
       
@@ -43,7 +49,36 @@ function Navbar() {
         
         }
 
-        {isMobile && <img src={Menu} alt="" />}
+        {isMobile && 
+        
+        <>
+          <img src={Menu} alt="" onClick={toggleMenu}/>
+          
+          { menuOpen &&
+
+            <div className='flex flex-col gap-8 absolute -bottom-80 p-5  left-0 shadow-md  overflow-hidden bg-white w-full'>
+
+              <NavLink to="/" className={({ isActive }) => isActive ? "font-medium border-b-2 border-black" : "border-b-2 border-transparent nav-links"}>Home</NavLink>
+
+              <NavLink to="/how-it-works" className={({ isActive }) => isActive ? "font-medium border-b-2 border-black" : "border-b-2 border-transparent nav-links transition-[0.3s]"}>How it Works</NavLink>
+
+              <NavLink to="/rates" className={({ isActive }) => isActive ? "font-medium border-b-2 border-black" : "border-b-2 border-transparent nav-links transition-[0.3s]"}>Rates</NavLink>
+
+              <NavLink to="/about-us" className={({ isActive }) => isActive ? "font-medium border-b-2 border-black" : "border-b-2 border-transparent nav-links transition-[0.3s]"}>About us</NavLink>
+
+              <div className='flex gap-5 items-center'>
+
+                <NavLink to="/sign-in"><SecBtn btnText="Sign in" /></NavLink>
+                <NavLink to="/register"><PriBtn btnText="Create Free Account" /></NavLink>
+
+            </div>
+          
+          </div>
+
+          }
+        </>
+         
+        }
         
     </nav>
   );

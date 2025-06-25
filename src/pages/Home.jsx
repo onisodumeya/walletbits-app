@@ -6,7 +6,7 @@ import Hero from '../assets/pngs/hero-image.png'
 import Navbar from "../components/Navbar.jsx";
 
 function Home() {
-  const isMobile = useMediaQuery({ maxWidth: 769 });
+  const isMobile = useMediaQuery({ maxWidth: 767 });
 
   return(
     <>
