@@ -16,17 +16,20 @@ function Navbar() {
   };
 
   useEffect(() => {
+
+    const menuBtn = document.querySelector('.menu-btn')
   
   if (menuOpen) {
     document.body.style.overflow = 'hidden';
-    document.querySelector('.menu-btn').classList.add("bg-gray-100")
+    menuBtn?.classList.add("bg-gray-100")
   } else {
     document.body.style.overflow = '';
-    document.querySelector('.menu-btn').classList.remove("bg-gray-100")
+    menuBtn?.classList.remove("bg-gray-100")
   }
 
   return () => {
     document.body.style.overflow = '';
+    menuBtn?.classList.remove("bg-gray-100")
   };
 }, [menuOpen]);
 
