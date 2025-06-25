@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useMediaQuery } from 'react-responsive';
 import { NavLink } from "react-router-dom";
 import { PriBtn, SecBtn } from '../components/Buttons.jsx'
 import Menu from '../assets/svgs/menu-btn.svg'
@@ -6,21 +7,7 @@ import Menu from '../assets/svgs/menu-btn.svg'
 
 
 function Navbar() {
-  const [isMobile, setIsMobile] = useState(false);
-
-    useEffect(() => {
-        const mediaQuery = window.matchMedia('(max-width: 900px)')
-
-        const handleMediaQuery = (event) => {
-            setIsMobile(event.matches)
-        }
-
-        setIsMobile(mediaQuery.matches);
-
-        mediaQuery.addListener(handleMediaQuery)
-
-        return () => mediaQuery.removeListener(handleMediaQuery)
-    }, [])
+  const isMobile = useMediaQuery({ maxWidth: 1000 });
 
 
   return (
