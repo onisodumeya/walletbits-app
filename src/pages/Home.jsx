@@ -1,5 +1,5 @@
-import { PriBtn, SecBtn } from "../components/Buttons";
-import Navbar from "../components/navbar";
+import { PriBtn, SecBtn } from "../components/Buttons.jsx";
+import Navbar from "../components/Navbar.jsx";
 
 function Home() {
   return(
