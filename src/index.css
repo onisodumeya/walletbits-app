@@ -1,1 +1,17 @@
 @import "tailwindcss";
+
+
+
+
+
+.pri-btn:hover{
+    background-color: #353535;
+}
+
+.sec-btn:hover{
+    background-color: #ececec;
+}
+
+.nav-links:hover{
+    border-bottom: 2px solid black;
+}
