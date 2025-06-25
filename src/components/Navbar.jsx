@@ -15,6 +15,19 @@ function Navbar() {
     setMenuOpen(prev => !prev);
   };
 
+  useEffect(() => {
+  
+  if (menuOpen) {
+    document.body.style.overflow = 'hidden';
+  } else {
+    document.body.style.overflow = '';
+  }
+
+  return () => {
+    document.body.style.overflow = '';
+  };
+}, [menuOpen]);
+
 
   return (
     <nav className='flex justify-between py-5 px-5 md:px-15  items-center relative w-full'>
