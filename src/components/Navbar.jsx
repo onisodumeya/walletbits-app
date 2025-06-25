@@ -19,8 +19,10 @@ function Navbar() {
   
   if (menuOpen) {
     document.body.style.overflow = 'hidden';
+    document.querySelector('.menu-btn').classList.add("bg-gray-100")
   } else {
     document.body.style.overflow = '';
+    document.querySelector('.menu-btn').classList.remove("bg-gray-100")
   }
 
   return () => {
@@ -65,7 +67,7 @@ function Navbar() {
         {isMobile && 
         
         <>
-          <img src={Menu} alt="" onClick={toggleMenu}/>
+          <img className='menu-btn p-2 rounded-md' src={Menu} alt="" onClick={toggleMenu}/>
           
           { menuOpen &&
 
