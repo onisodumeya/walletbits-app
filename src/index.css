@@ -1,7 +1,9 @@
 @import "tailwindcss";
 
 
-
+body{
+  font-family: 'Inter', sans-serif;
+}
 
 
 .pri-btn:hover{
