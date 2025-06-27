@@ -102,34 +102,27 @@ body{
   font-size: 25px;
   padding-bottom: 10px;
 }
+
 .foot{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
     background-color: #000000;
     color: white;
     padding: 30px;
-    justify-content: center;
+    align-items: center;
     font-size: 10px;
-    margin-top:10% ;
-    margin-left:10% ;
-    margin-right: 10%;
 }
-.container{
-    border: 1px solid green;
-    display: flex;
-    
-}
-.sections{
-    padding: 5%;
-    width: 50%;
-    display: flex;
-    gap: 20%;
 
+.sections{
+    display: flex;
+    box-sizing: border-box;
 }
 #sec{
-    gap: 30px;
-    padding-left: 10%;
+    justify-content: space-between;
 }
 #fir{
-    padding: 5%;
+    flex-direction: column;
     font-size: 15px;
 }
 .head{
