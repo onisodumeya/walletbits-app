@@ -3,10 +3,11 @@ import { useMediaQuery } from 'react-responsive';
 import { PriBtn, SecBtn } from "../components/Buttons.jsx";
 import { Link } from 'react-router-dom';
 
-import CountUp from 'react-countup'
-import Hero from '../assets/pngs/hero-image.png'
+import CountUp from 'react-countup';
+import Hero from '../assets/pngs/hero-image.png';
 import Navbar from "../components/Navbar.jsx";
-import Cards from '../components/Cards.jsx'
+import Cards from '../components/Cards.jsx';
+import Footer from "../components/Footer.jsx";
 
 import image from '../assets/pngs/img1.png'
 import imag from '../assets/pngs/img2.png'
@@ -97,6 +98,7 @@ function Home() {
           link="/sign-in"
           buttonText="Start Trading"/>
       </section>
+      <Footer/>
     </>
   )
   

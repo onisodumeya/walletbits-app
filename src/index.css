@@ -102,3 +102,53 @@ body{
   font-size: 25px;
   padding-bottom: 10px;
 }
+.foot{
+    background-color: #000000;
+    color: white;
+    padding: 30px;
+    justify-content: center;
+    font-size: 10px;
+    margin-top:10% ;
+    margin-left:10% ;
+    margin-right: 10%;
+}
+.container{
+    border: 1px solid green;
+    display: flex;
+    
+}
+.sections{
+    padding: 5%;
+    width: 50%;
+    display: flex;
+    gap: 20%;
+
+}
+#sec{
+    gap: 30px;
+    padding-left: 10%;
+}
+#fir{
+    padding: 5%;
+    font-size: 15px;
+}
+.head{
+    font-size: 20px;
+}
+#email{
+    width: 200px;
+    height: 30px;
+    border: 1px solid white;
+    padding: 5px;
+}
+#btn{
+    background-color: white;
+    color: black;
+    width: 70px;
+    height: 30px;
+}
+@media (max-width:600px){
+.container{
+    flex-direction: column;
+}
+}
