@@ -1,6 +1,6 @@
 import pngx from '../assets/pngs/X.png'
 import pngtube from '../assets/pngs/Youtube.png'
-import pnglink from '../assets/pngs/Linked.png'
+import pnglink from '../assets/pngs/linked.png'
 import pnginsta from '../assets/pngs/Instagram.png'
 import facebook from '../assets/pngs/Facebook.png'
 
