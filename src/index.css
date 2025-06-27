@@ -11,15 +11,6 @@ body{
   font-family: 'Inter', sans-serif;
 }
 
-
-.pri-btn:hover{
-    background-color: #353535;
-}
-
-.sec-btn:hover{
-    background-color: #ececec;
-}
-
 .nav-links:hover{
     border-bottom: 2px solid var(--dark);
 }
@@ -61,6 +52,12 @@ body{
     width: fit-content;
     padding: 12px 24px;
     font-size: 15px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.cardbutton:hover{
+    background-color: #353535;
 }
 
 @media (min-width: 769px) {

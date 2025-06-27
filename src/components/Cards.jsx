@@ -1,20 +1,22 @@
-import PropTypes from 'prop-types';
 import { PriBtn } from './Buttons';
+import { Link } from 'react-router-dom';
 
-function Cards({ image, title, description, buttonText }) {
+import PropTypes from 'prop-types';
+
+function Cards({ image, title, description, link, buttonText }) {
   return (
     <>
     <div className="cards px-5 gap-5 py-10">
       <h1 className="header">{title}</h1>
       <img src={image} alt="Card visual" />
       <p>{description}</p>
-      <button className="cardbutton">{buttonText}</button>
+      <Link to={link}><button className="cardbutton">{buttonText}</button></Link>
     </div>
     <div className='desk'>
         <div className="divs gap-2 items-start">
             <h1 className="header">{title}</h1>
             <p>{description}</p>
-            <button className="cardbutton">{buttonText}</button>
+            <Link to={link}><button className="cardbutton">{buttonText}</button></Link>
         </div> 
         <img src={image} alt="image" className='card-img' />
     </div>

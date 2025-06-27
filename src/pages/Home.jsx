@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { useMediaQuery } from 'react-responsive';
 import { PriBtn, SecBtn } from "../components/Buttons.jsx";
+import { Link } from 'react-router-dom';
+
 import CountUp from 'react-countup'
 import Hero from '../assets/pngs/hero-image.png'
 import Navbar from "../components/Navbar.jsx";
@@ -24,8 +26,8 @@ function Home() {
           <>
             <p>Trade your unused gift cards for instant  cash deposits into your Nigerian bank account. No delays, no hidden fees.</p>
             <div className="flex gap-5">
-              <PriBtn btnText="Start Trading" />
-              <SecBtn btnText="Check Rates" />
+              <Link to='/register'><PriBtn btnText="Start Trading" /></Link>
+              <Link to='/rates'><SecBtn btnText="Check Rates" /></Link>
             </div>
           </>
           }
@@ -82,14 +84,17 @@ function Home() {
         <Cards image={image}
           title=" why choose walletbits?"
           description= "Walletbits is a smart choice for everyone looking to exchange gift cards quickly, securely, and at competitive rates. Walletbits makes the entire process seamless—whether you are trading Amazon, iTunes, Steam, or other popular gift cards. Customers can enjoy instant payouts into their Nigerian bank accounts in naira—backed by 24/7 customer support."
+          link="/register"
           buttonText="Register Now"/> 
         <Cards image={imag}
           title="Best Transaction Rates"
           description="When you choose walletbits, you dont just exchange gift cards, you unlock nigeria's most competitive rate on the market.we constantly benchmark our exchange rate against leading platforms like cardtonic, apexpay and our rate consistently comes out ahead of others. that means more value to your unused Amazon, itunes, goggle play or other gift cards"
+          link="/rates"
           buttonText="Check Rates"/>
         <Cards image={imags}
           title="Secure and hassle free"
           description="Walletbits offers secure and hassle free experience to everyone looking to exchange giftcards with confidence.your transactions are protected with industry-standard encryption and multi-layered verification, ensuring your data and funds remains safe at all times. from card submission to instant payout,everytime happens quickly and transparently"
+          link="/sign-in"
           buttonText="Start Trading"/>
       </section>
     </>
