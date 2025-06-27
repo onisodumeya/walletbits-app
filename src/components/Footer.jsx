@@ -37,7 +37,7 @@ function Footer() {
               provide consent to receive updates from our company.
             </p>
           </div>
-          <div className={`${isMobile ? 'w-full justify-between' : 'w-2/5'} sections w-2/5" id="sec`}>
+          <div className={`${isMobile ? 'w-full' : 'w-2/5'} sections justify-between w-2/5" id="sec`}>
             <div>
               <h2 className="head mb-4">Company</h2>
               <ul className="flex flex-col gap-3">
