@@ -1,11 +1,12 @@
 import { Link } from 'react-router-dom'
 import { useMediaQuery } from 'react-responsive'
 
-import pngx from '../assets/pngs/X.png'
-import pngtube from '../assets/pngs/Youtube.png'
-import pnglink from '../assets/pngs/linked.png'
-import pnginsta from '../assets/pngs/Instagram.png'
-import facebook from '../assets/pngs/Facebook.png'
+import PngX from '../assets/pngs/X.png'
+import PngTube from '../assets/pngs/Youtube.png'
+import PngLink from '../assets/pngs/linked.png'
+import PngInsta from '../assets/pngs/Instagram.png'
+import Facebook from '../assets/pngs/Facebook.png'
+
 
 
 
@@ -14,7 +15,7 @@ function Footer() {
 
 
   return (
-    <footer className={`${isMobile ? 'pt-10' : 'pt-20'} px-5 md:px-15`}>
+    <footer className="pt-10 px-5 md:px-15">
       <div className="foot rounded-t-4xl">
 
         <div className={`${isMobile ? 'flex-col' : 'flex-row'} flex  border border-green-500  w-full p-8 gap-10 justify-between`}>
@@ -60,11 +61,11 @@ function Footer() {
             <div>
               <h2 className="head mb-4">Follow Us</h2>
               <ul className="flex flex-col gap-3">
-                <li className="flex items-center gap-2"><img src={facebook} /> Facebook</li>
-                <li className="flex items-center gap-2"><img src={pnginsta} /> Instagram</li>
-                <li className="flex items-center gap-2"><img src={pngx} /> X (Twitter)</li>
-                <li className="flex items-center gap-2"><img src={pnglink} /> LinkedIn</li>
-                <li className="flex items-center gap-2"><img src={pngtube} /> YouTube</li>
+                <li className="flex items-center gap-2"><img src={Facebook} /> Facebook</li>
+                <li className="flex items-center gap-2"><img src={PngInsta} /> Instagram</li>
+                <li className="flex items-center gap-2"><img src={PngX} /> X (Twitter)</li>
+                <li className="flex items-center gap-2"><img src={PngLink} /> LinkedIn</li>
+                <li className="flex items-center gap-2"><img src={PngTube} /> YouTube</li>
               </ul>
             </div>
           </div>

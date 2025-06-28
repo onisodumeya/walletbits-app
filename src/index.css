@@ -15,6 +15,10 @@ body{
     border-bottom: 2px solid var(--dark);
 }
 
+.linear-bg{
+    background: linear-gradient(to right, #9B3B91BF, #383335F2, #9B3B91BF);
+}
+
 .cards{
     display: flex;
     flex-direction: column;

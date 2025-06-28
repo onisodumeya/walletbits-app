@@ -7,6 +7,7 @@ import CountUp from 'react-countup';
 import Hero from '../assets/pngs/hero-image.png';
 import Navbar from "../components/Navbar.jsx";
 import Cards from '../components/Cards.jsx';
+import TestimonialCarousel from "../components/TestimonialCarousel.jsx";
 import Footer from "../components/Footer.jsx";
 
 import image from '../assets/pngs/img1.png'
@@ -98,6 +99,9 @@ function Home() {
           link="/sign-in"
           buttonText="Start Trading"/>
       </section>
+
+        <TestimonialCarousel />
+
       <Footer/>
     </>
   )
