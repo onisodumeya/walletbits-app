@@ -18,7 +18,7 @@ function Footer() {
     <footer className="pt-10 px-5 md:px-15">
       <div className="foot rounded-t-4xl">
 
-        <div className={`${isMobile ? 'flex-col' : 'flex-row'} flex  border border-green-500  w-full p-8 gap-10 justify-between`}>
+        <div className={`${isMobile ? 'flex-col' : 'flex-row'} flex  border border-green-500  w-full p-5 gap-10 justify-between`}>
           <div className={`${isMobile ? 'w-full' : 'w-1/2'} sections flex flex-col w-1/2" id="fir`}>
             <h1 className="head mb-5">WALLETBITS</h1>
             <p className="mb-5 text-gray-50 text-[14px]">Join our newsletter to get notified about all new releases and features.</p>
@@ -40,7 +40,7 @@ function Footer() {
           </div>
           <div className={`${isMobile ? 'w-full' : 'w-2/5'} sections justify-between w-2/5" id="sec`}>
             <div>
-              <h2 className="head mb-4">Company</h2>
+              <h2 className="text-sm mb-4">Company</h2>
               <ul className="flex flex-col gap-3">
                 <li><Link to="/about-us">About Us</Link></li>
                 <li><Link to="/careers">Careers</Link></li>
@@ -51,7 +51,7 @@ function Footer() {
             </div>
 
             <div>
-              <h2 className="head mb-4">Support</h2>
+              <h2 className="text-sm mb-4">Support</h2>
               <ul className="flex flex-col gap-3">
                 <li><Link to="/faqs">FAQs</Link></li>
                 <li><Link to="/contact">Contact</Link></li>
@@ -59,7 +59,7 @@ function Footer() {
             </div>
 
             <div>
-              <h2 className="head mb-4">Follow Us</h2>
+              <h2 className="text-sm mb-4">Follow Us</h2>
               <ul className="flex flex-col gap-3">
                 <li className="flex items-center gap-2"><img src={Facebook} /> Facebook</li>
                 <li className="flex items-center gap-2"><img src={PngInsta} /> Instagram</li>
