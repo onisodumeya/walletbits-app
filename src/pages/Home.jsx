@@ -177,7 +177,7 @@ function Home() {
 
         {isMobile && 
 
-          <div ref={mobRef} className="flex flex-col text-center w-4/5 items-center gap-5 mt-10">
+          <div ref={mobRef} className="relative flex flex-col text-center w-4/5 items-center gap-5 mt-10">
             <p>Trade your unused gift cards for instant  cash deposits into your Nigerian bank account. No delays, no hidden fees.</p>
             
             <div className="flex gap-5">

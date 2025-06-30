@@ -49,7 +49,8 @@ function Navbar() {
 
 
   return (
-    <nav ref={navRef} className='top-0 opacity-0 -translate-y-8 transition-all duration-500 z-50 flex justify-between py-5 px-5 md:px-15 items-center w-full'>
+    <>
+    <nav ref={navRef} className='top-0 opacity-0 z-50 -translate-y-8 transition-all duration-500 flex justify-between py-5 px-5 md:px-15 items-center w-full'>
 
       <NavLink to="/" className='text-pink-400' ><h2 className='font-bold text-2xl'>WALLETBITS</h2></NavLink>
 
@@ -78,41 +79,35 @@ function Navbar() {
           </div>
         </div>
 
-
       }
 
-      {isMobile &&
-
-        <>
-          <img className='menu-btn p-2 rounded-md' src={Menu} alt="" onClick={toggleMenu} />
-
-          {menuOpen &&
-
-            <div className='flex flex-col gap-8 absolute -bottom-80 p-5  left-0 shadow-md  overflow-hidden bg-white w-full'>
-
-              <NavLink to="/" className={({ isActive }) => isActive ? "font-medium border-b-2 border-black" : "border-b-2 border-transparent nav-links"}>Home</NavLink>
-
-              <NavLink to="/how-it-works" className={({ isActive }) => isActive ? "font-medium border-b-2 border-black" : "border-b-2 border-transparent nav-links transition-[0.3s]"}>How it Works</NavLink>
-
-              <NavLink to="/rates" className={({ isActive }) => isActive ? "font-medium border-b-2 border-black" : "border-b-2 border-transparent nav-links transition-[0.3s]"}>Rates</NavLink>
-
-              <NavLink to="/about-us" className={({ isActive }) => isActive ? "font-medium border-b-2 border-black" : "border-b-2 border-transparent nav-links transition-[0.3s]"}>About us</NavLink>
-
-              <div className='flex gap-5 items-center'>
-
-                <NavLink to="/sign-in"><SecBtn btnText="Sign in" /></NavLink>
-                <NavLink to="/register"><PriBtn btnText="Create Free Account" /></NavLink>
-
-              </div>
-
-            </div>
-
-          }
-        </>
-
-      }
+      {isMobile && <img className='menu-btn p-2 rounded-md' src={Menu} alt="" onClick={toggleMenu} />}
 
     </nav>
+
+      {isMobile && menuOpen &&
+
+        <div className="z-40 fixed top-[80px] left-0 w-full bg-white shadow-md px-5 py-8 flex flex-col gap-6">
+
+          <NavLink to="/" className={({ isActive }) => isActive ? "font-medium border-b-2 border-black" : "border-b-2 border-transparent nav-links"}>Home</NavLink>
+
+          <NavLink to="/how-it-works" className={({ isActive }) => isActive ? "font-medium border-b-2 border-black" : "border-b-2 border-transparent nav-links transition-[0.3s]"}>How it Works</NavLink>
+
+          <NavLink to="/rates" className={({ isActive }) => isActive ? "font-medium border-b-2 border-black" : "border-b-2 border-transparent nav-links transition-[0.3s]"}>Rates</NavLink>
+
+          <NavLink to="/about-us" className={({ isActive }) => isActive ? "font-medium border-b-2 border-black" : "border-b-2 border-transparent nav-links transition-[0.3s]"}>About us</NavLink>
+
+          <div className='flex gap-5 items-center'>
+
+            <NavLink to="/sign-in"><SecBtn btnText="Sign in" /></NavLink>
+            <NavLink to="/register"><PriBtn btnText="Create Free Account" /></NavLink>
+
+          </div>
+
+        </div>
+
+      }
+    </>
   );
 }
 
