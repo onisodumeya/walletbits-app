@@ -3,7 +3,7 @@ import { useMediaQuery } from 'react-responsive';
 import { NavLink } from "react-router-dom";
 import { PriBtn, SecBtn } from '../components/Buttons.jsx';
 
-import { gsap, ScrollTrigger } from 'gsap/all'
+import { gsap } from 'gsap/all'
 
 import Menu from '../assets/svgs/menu-btn.svg';
 
@@ -11,7 +11,6 @@ import Menu from '../assets/svgs/menu-btn.svg';
 
 function Navbar() {
   const navRef = useRef(null);
-  const heroRef = useRef(null)
 
   useEffect(() => {
     if (navRef.current) {

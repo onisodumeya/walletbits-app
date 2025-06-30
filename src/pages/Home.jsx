@@ -1,7 +1,10 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useMediaQuery } from 'react-responsive';
 import { PriBtn, SecBtn } from "../components/Buttons.jsx";
 import { Link } from 'react-router-dom';
+import { gsap, ScrollTrigger } from 'gsap/all';
+
+gsap.registerPlugin(ScrollTrigger);
 
 import CountUp from 'react-countup';
 import Hero from '../assets/pngs/hero-image.png';
@@ -10,18 +13,135 @@ import Cards from '../components/Cards.jsx';
 import TestimonialCarousel from "../components/TestimonialCarousel.jsx";
 import Footer from "../components/Footer.jsx";
 
-import image from '../assets/pngs/img1.png'
-import imag from '../assets/pngs/img2.png'
-import imags from '../assets/pngs/img3.png'
+import image from '../assets/pngs/img1.png';
+import imag from '../assets/pngs/img2.png';
+import imags from '../assets/pngs/img3.png';
 
 function Home() {
   const isMobile = useMediaQuery({ maxWidth: 767 });
+
+  const textRef = useRef();
+  const imageRef = useRef();
+  const mobRef = useRef();
+
+  useEffect(() => {
+    if (!textRef.current) return;
+
+    if(!isMobile){
+      gsap.fromTo(
+        textRef.current,
+        { x: -100, autoAlpha: 0, },
+        {
+          scrollTrigger: {
+            trigger: textRef.current,
+            start: "top 80%",
+            toggleActions: "play none none none",
+            once: true,
+          },
+
+          x: 0,
+          autoAlpha: 1,
+          duration: 1,
+          ease: "power3.out",
+          immediateRender: false,
+        }
+      );
+    } else {
+      gsap.fromTo(
+        textRef.current,
+        { y: 100, autoAlpha: 0, },
+        {
+          scrollTrigger: {
+            trigger: textRef.current,
+            start: "top 80%",
+            toggleActions: "play none none none",
+            once: true,
+          },
+
+          y: 0,
+          autoAlpha: 1,
+          duration: 1,
+          ease: "power3.out",
+          immediateRender: false,
+        }
+      );
+    }
+  }, []);
+
+  useEffect(() => {
+    if (!imageRef.current) return;
+
+    if(!isMobile){
+      gsap.fromTo(
+        imageRef.current,
+        { x: 100, autoAlpha: 0, },
+        {
+          scrollTrigger: {
+            trigger: textRef.current,
+            start: "top 80%",
+            toggleActions: "play none none none",
+            once: true,
+          },
+
+          x: 0,
+          autoAlpha: 1,
+          duration: 1,
+          ease: "power3.out",
+          immediateRender: false,
+        }
+      );
+    } else {
+      gsap.fromTo(
+        imageRef.current,
+        { y: 100, autoAlpha: 0, },
+        {
+          scrollTrigger: {
+            trigger: textRef.current,
+            start: "top 80%",
+            toggleActions: "play none none none",
+            once: true,
+          },
+
+          y: 0,
+          autoAlpha: 1,
+          duration: 1,
+          ease: "power3.out",
+          immediateRender: false,
+        }
+      );
+    }
+  }, []);
+  useEffect(() => {
+    if (!imageRef.current) return;
+
+    if(isMobile){
+      gsap.fromTo(
+        mobRef.current,
+        { y: 100, autoAlpha: 0, },
+        {
+          scrollTrigger: {
+            trigger: textRef.current,
+            start: "top 80%",
+            toggleActions: "play none none none",
+            once: true,
+          },
+
+          y: 0,
+          autoAlpha: 1,
+          duration: 1,
+          ease: "power3.out",
+          immediateRender: false,
+        }
+      );
+    }
+  }, []);
+
 
   return(
     <>
       <Navbar />
       <section className='hero flex flex-col md:flex-row justify-between px-5 md:px-15 pt-10 items-center'>
-        <div className="flex flex-col gap-5 text w-[100%] md:w-[80%] lg:w-[60%] justify-start text-center md:text-start">
+        <div ref={textRef} className="flex flex-col gap-5 text w-[100%] md:w-[80%] lg:w-[60%] justify-start text-center md:text-start">
           <h1 className="font-bold text-5xl leading-14">“Instantly Convert Gift cards To Naira”</h1>
           <h3 className="text-2xl leading-10">-Fast, Secure & Hassle Free</h3>
           {!isMobile &&
@@ -53,11 +173,11 @@ function Home() {
 
           }
         </div>
-        <img src={Hero} alt="" className="w-[80%] md:w-[40%]" />
+        <img ref={imageRef} src={Hero} alt="" className="w-[80%] md:w-[40%]" />
 
         {isMobile && 
 
-          <div className="flex flex-col text-center w-4/5 items-center gap-5 mt-10">
+          <div ref={mobRef} className="flex flex-col text-center w-4/5 items-center gap-5 mt-10">
             <p>Trade your unused gift cards for instant  cash deposits into your Nigerian bank account. No delays, no hidden fees.</p>
             
             <div className="flex gap-5">
