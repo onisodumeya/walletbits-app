@@ -18,11 +18,83 @@ import imag from '../assets/pngs/img2.png';
 import imags from '../assets/pngs/img3.png';
 
 function Home() {
+
+  const cardLeftRef = useRef();
+  const cardRightRef = useRef();
+  const cardLeftRef2 = useRef();
+
   const isMobile = useMediaQuery({ maxWidth: 767 });
 
   const textRef = useRef();
   const imageRef = useRef();
   const mobRef = useRef();
+
+    useEffect(() => {
+      if(!cardLeftRef.current) return;
+      if(!cardLeftRef2.current) return;
+      if(!cardRightRef.current) return;
+
+      if (cardLeftRef.current) {
+        gsap.fromTo(
+          cardLeftRef.current,
+          { x: -100, opacity: 0, },
+
+          { 
+            scrollTrigger: { 
+            trigger: cardLeftRef.current, 
+            start: "top 80%", 
+            toggleActions: "play none none none", 
+            once: true,},
+          
+            x: 0, 
+            opacity: 1, 
+            duration: 1, 
+            ease: "power3.out"
+          },
+        );
+      };
+
+      if (cardLeftRef2.current) {
+        gsap.fromTo(
+          cardLeftRef2.current,
+          { x: -100, opacity: 0, },
+
+          { 
+            scrollTrigger: { 
+            trigger: cardLeftRef2.current, 
+            start: "top 80%", 
+            toggleActions: "play none none none", 
+            once: true,},
+          
+            x: 0, 
+            opacity: 1, 
+            duration: 1, 
+            ease: "power3.out"
+          },
+        );
+      };
+
+      if (cardRightRef.current) {
+        gsap.fromTo(
+          cardRightRef.current,
+          { x: 100, autoAlpha: 0, },
+
+          {
+            scrollTrigger: {
+              trigger: cardRightRef.current,
+              start: "top 80%",
+              toggleActions: "play none none none",
+              once: true,
+            },
+
+            x: 0,
+            autoAlpha: 1,
+            duration: 1,
+            ease: "power3.out"
+          },
+        );
+      }
+    }, []);
 
   useEffect(() => {
     if (!textRef.current) return;
@@ -203,17 +275,17 @@ function Home() {
       </section>
 
       <section className="flex flex-col items-center gap-5 px-5 md:px-15 pt-10">
-        <Cards image={image}
+        <Cards refer={cardLeftRef} image={image}
           title=" why choose walletbits?"
           description= "Walletbits is a smart choice for everyone looking to exchange gift cards quickly, securely, and at competitive rates. Walletbits makes the entire process seamless—whether you are trading Amazon, iTunes, Steam, or other popular gift cards. Customers can enjoy instant payouts into their Nigerian bank accounts in naira—backed by 24/7 customer support."
           link="/register"
           buttonText="Register Now"/> 
-        <Cards image={imag}
+        <Cards refer={cardRightRef} image={imag}
           title="Best Transaction Rates"
           description="When you choose walletbits, you dont just exchange gift cards, you unlock nigeria's most competitive rate on the market.we constantly benchmark our exchange rate against leading platforms like cardtonic, apexpay and our rate consistently comes out ahead of others. that means more value to your unused Amazon, itunes, goggle play or other gift cards"
           link="/rates"
           buttonText="Check Rates"/>
-        <Cards image={imags}
+        <Cards refer={cardLeftRef2} image={imags}
           title="Secure and hassle free"
           description="Walletbits offers secure and hassle free experience to everyone looking to exchange giftcards with confidence.your transactions are protected with industry-standard encryption and multi-layered verification, ensuring your data and funds remains safe at all times. from card submission to instant payout,everytime happens quickly and transparently"
           link="/sign-in"

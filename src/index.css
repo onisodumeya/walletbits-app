@@ -64,16 +64,6 @@ body{
     background-color: #353535;
 }
 
-@media (min-width: 769px) {
-    .desk{
-        display: flex;
-    }
-
-    .cards{
-        display: none;
-    }
-}
-
 @media (max-width: 768px){
     .cards{
         display: flex;
@@ -87,10 +77,6 @@ body{
         justify-self: center;
         align-self: center;
     }
-    
-    .desk{
-        display: none;
-    }
 }
 
 .divs{
@@ -99,12 +85,6 @@ body{
     height: 90%;
     width: 100%;
     padding: 20px;
-}
-
-.header{
-  font-weight: bold;
-  font-size: 25px;
-  padding-bottom: 10px;
 }
 
 .foot{
