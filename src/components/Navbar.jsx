@@ -86,7 +86,6 @@ function Navbar() {
     </nav>
 
       {isMobile && menuOpen &&
-
         <div className="z-40 fixed top-[80px] left-0 w-full bg-white shadow-md px-5 py-8 flex flex-col gap-6">
 
           <NavLink to="/" className={({ isActive }) => isActive ? "font-medium border-b-2 border-black" : "border-b-2 border-transparent nav-links"}>Home</NavLink>
@@ -105,7 +104,6 @@ function Navbar() {
           </div>
 
         </div>
-
       }
     </>
   );
