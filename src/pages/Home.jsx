@@ -28,6 +28,7 @@ function Home() {
   const textRef = useRef();
   const imageRef = useRef();
   const mobRef = useRef();
+  const testimonialRef = useRef();
   
 
     useEffect(() => {
@@ -154,7 +155,6 @@ function Home() {
   }, []);
 
   useEffect(() => {
-    const img = imageRef.current;
 
     if (!imageRef.current) return;
 
@@ -198,14 +198,36 @@ function Home() {
       );
     }
 
-    if (img && !img.complete) {
-      img.addEventListener("load", () => {
-        ScrollTrigger.refresh();
-      });
-    } else {
-      
+    const timeout = setTimeout(() => {
       ScrollTrigger.refresh();
-    }
+    }, 1000);
+
+    return () => clearTimeout(timeout);
+  }, []);
+
+
+  useEffect(() => {
+
+    if (!testimonialRef.current) return;
+
+      gsap.fromTo(
+        testimonialRef.current,
+        { y: 100, opacity: 0, },
+        {
+          scrollTrigger: {
+            trigger: testimonialRef.current,
+            start: "top 80%",
+            toggleActions: "play none none none",
+            once: true,
+          },
+
+          y: 0,
+          opacity: 1,
+          duration: 1,
+          ease: "power3.out",
+          immediateRender: false,
+        }
+      );
 
     const timeout = setTimeout(() => {
       ScrollTrigger.refresh();
@@ -213,6 +235,8 @@ function Home() {
 
     return () => clearTimeout(timeout);
   }, []);
+
+
   useEffect(() => {
     if (!imageRef.current) return;
 
@@ -328,7 +352,7 @@ function Home() {
           buttonText="Start Trading"/>
       </section>
 
-      <section className="flex flex-col items-center text-center px-5 md:px-15 mt-10">
+      <section ref={testimonialRef} className="flex flex-col items-center text-center px-5 md:px-15 mt-10 opacity-0">
         <h2 className="font-bold text-3xl pb-2.5 md:pb-5">Customer`s Feedback Highlights</h2>
 
         <p className="w-full md:w-9/12 pb-5 md:pb-10">At walletbits, we focus on offering an outstanding trading experience. Users commend our platform for it`s strong security, fast performance,and easy to use. here is what some of our customers are saying</p>

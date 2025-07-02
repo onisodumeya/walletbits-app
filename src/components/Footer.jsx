@@ -1,5 +1,9 @@
 import { Link } from 'react-router-dom'
 import { useMediaQuery } from 'react-responsive'
+import { useEffect, useRef } from 'react'
+import { gsap, ScrollTrigger } from 'gsap/all'
+
+gsap.registerPlugin(ScrollTrigger)
 
 import PngX from '../assets/pngs/X.png'
 import PngTube from '../assets/pngs/Youtube.png'
@@ -13,9 +17,35 @@ import Facebook from '../assets/pngs/Facebook.png'
 function Footer() {
   const isMobile = useMediaQuery({ maxWidth: 1000 });
 
+  const footerRef = useRef()
+
+  useEffect(() => {
+
+    if (!footerRef.current) return;
+
+    gsap.fromTo(
+      footerRef.current,
+      { y: 100, opacity: 0, },
+      {
+        scrollTrigger: {
+          trigger: footerRef.current,
+          start: "top 80%",
+          toggleActions: "play none none none",
+          once: true,
+        },
+
+        y: 0,
+        opacity: 1,
+        duration: 1,
+        ease: "power3.out",
+        immediateRender: false,
+      }
+    );
+  }, []);
+
 
   return (
-    <footer className="pt-10 px-5 md:px-15">
+    <footer ref={footerRef} className="pt-10 px-5 md:px-15 opacity-0">
       <div className="foot rounded-t-4xl">
 
         <div className={`${isMobile ? 'flex-col' : 'flex-row'} flex  border border-green-500  w-full p-5 gap-10 justify-between`}>
