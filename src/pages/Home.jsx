@@ -28,6 +28,7 @@ function Home() {
   const textRef = useRef();
   const imageRef = useRef();
   const mobRef = useRef();
+  
 
     useEffect(() => {
       if(!cardLeftRef.current) return;
@@ -153,6 +154,8 @@ function Home() {
   }, []);
 
   useEffect(() => {
+    const img = imageRef.current;
+
     if (!imageRef.current) return;
 
     if(!isMobile){
@@ -193,6 +196,15 @@ function Home() {
           immediateRender: false,
         }
       );
+    }
+
+    if (img && !img.complete) {
+      img.addEventListener("load", () => {
+        ScrollTrigger.refresh();
+      });
+    } else {
+      
+      ScrollTrigger.refresh();
     }
 
     const timeout = setTimeout(() => {
