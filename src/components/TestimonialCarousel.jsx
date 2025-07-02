@@ -34,10 +34,7 @@ export default function TestimonialCarousel() {
     const { username, text, image, bg } = testimonials[active];
 
     return (
-        <div className="flex flex-col items-center justify-center bg-white text-center py-5 px-5 md:px-15 mt-10">
-            <h2 className="font-bold text-3xl pb-2.5 md:pb-5">Customer`s Feedback Highlights</h2>
-
-            <p className="w-full md:w-9/12 pb-5 md:pb-10">At walletbits, we focus on offering an outstanding trading experience. Users commend our platform for it`s strong security, fast performance,and easy to use. here is what some of our customers are saying</p>
+        <div className="flex flex-col items-center w-fit justify-center bg-white text-center">
             <div
                 className={`w-full md:w-3/5 py-5 md:py-10 text-white text-center p-6 rounded-xl transition-all duration-500 shadow-xl linear-bg`}
             >
@@ -51,12 +48,6 @@ export default function TestimonialCarousel() {
             </div>
 
             {/* Navigation Buttons */}
-            <div className="flex gap-4 mt-6">
-                
-                
-            </div>
-
-            {/* Dots / Indicators */}
             <div className="flex gap-5 mt-4 items-center">
                 <button
                     onClick={prev}
