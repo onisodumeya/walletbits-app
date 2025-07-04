@@ -1,5 +1,5 @@
 import Arrow from '../assets/svgs/previous-arrow.svg'
-import { Link, useNavigate } from "react-router-dom"
+import { Link } from "react-router-dom"
 
 export const AuthForm = ({ method, heading, subHeading, inputs, buttonText, buttonLink, hasAccount = false, noAccount = false, forgotPassword = false, extra }) => {
 
