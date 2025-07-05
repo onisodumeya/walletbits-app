@@ -26,7 +26,7 @@ function Register() {
         />
         
             <div className='flex max-h-screen'>
-                <div className='auth-pages pt-40 bg-[#F9FAFB] max-h-screen lg:h-fit lg:overflow-scroll w-full lg:pt-40 lg:pb-10 lg:w-1/2 flex flex-col lg:flex-row items-center justify-center'>
+                <div className='auth-pages pt-30 bg-[#F9FAFB] max-h-screen lg:h-fit lg:overflow-scroll w-full lg:pt-40 lg:pb-10 lg:w-1/2 flex flex-col lg:flex-row items-center justify-center'>
                 <h1 className='font-black text-3xl tracking-wide absolute top-5 lg:hidden text-[#D470B7]'>WALLETBITS</h1>
 
                 <AuthForm
