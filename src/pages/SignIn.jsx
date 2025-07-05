@@ -1,7 +1,7 @@
 import ImageBg from '../components/AuthImageBg.jsx'
 import Modal from '../components/Modals.jsx'
 
-import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import {AuthForm, Input} from '../components/AuthForm.jsx'
 import { useState, useEffect, useRef } from 'react'
 
@@ -32,7 +32,7 @@ function SignIn(){
         />
         <div className='flex bg-[#F9FAFB] h-screen'>
                 <div className='auth-pages pt-20 lg:pt-0 w-full overflow-hidden lg:w-1/2 flex flex-col lg:flex-row items-center justify-start lg:justify-center'>
-                <h1 className='font-black text-3xl tracking-wide absolute top-5 lg:hidden text-[#D470B7]'>WALLETBITS</h1>
+                    <Link to='/' className='font-black text-3xl tracking-wide absolute top-5 lg:hidden text-[#D470B7]'><h1>WALLETBITS</h1></Link>
                 <AuthForm 
 
                     heading = "Log in"
