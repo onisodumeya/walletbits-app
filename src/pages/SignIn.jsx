@@ -7,13 +7,26 @@ import { useState, useEffect, useRef } from 'react'
 
 function SignIn(){
 
+    const [isModalopen, setCloseModal] = useState(false)
+
+    const handleOpenModal = () => {
+        setCloseModal(true)
+        document.body.style.overflow = "hidden"
+    }
+
+    const handleCloseModal = () => {
+        setCloseModal(false)
+        document.body.style.overflow = "scroll"
+    }
+
     return(
         <>
         <Modal
 
-            modal = {false}
-            successImg = {true}
-            heading = "Done"
+            openModal={isModalopen}
+            closeModal={handleCloseModal}
+            successImg = {false}
+            heading = ""
             paragragh = ""
 
         />
@@ -50,7 +63,7 @@ function SignIn(){
 
                     buttonText = "Log in"
 
-                    buttonLink = {}
+                    // buttonLink = {}
 
                     noAccount = {true}
 
