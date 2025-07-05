@@ -50,7 +50,7 @@ function SignIn(){
 
                     buttonText = "Log in"
 
-                    buttonLink = ""
+                    buttonLink = {}
 
                     noAccount = {true}
 
