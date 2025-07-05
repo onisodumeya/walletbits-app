@@ -14,31 +14,31 @@ function SignIn(){
                     inputs={
                         <>
                             <Input
-                                labelText={"Email"}
-                                placeholder={"Email address"}
-                                name={"emailAddress"}
-                                inputType={"email"}
+                                labelText="Email"
+                                placeholder="Email address"
+                                name="emailAddress"
+                                inputType="email"
                             />
 
                             <Input
-                                labelText={"Password"}
-                                placeholder={"Password"}
-                                name={"loginPassword"}
-                                inputType={"password"}
+                                labelText="Password"
+                                placeholder="Password"
+                                name="loginPassword"
+                                inputType="password"
                             />
                         </>
                     }
+
+                    buttonText = "Log In"
+
+                    buttonLink = ""
+
+                    bottomLinkText = "Forgot password?"
+
+                    noAccount = {true}
+
+                    forgotPassword = {true}
                 </AuthForm>
-                
-                buttonText = "Log In"
-
-                buttonLink = ""
-
-                bottomLinkText = "Forgot password?"
-
-                noAccount = {true}
-
-                forgotPassword = {true}
             </div>
             <ImageBg />
         </div>
