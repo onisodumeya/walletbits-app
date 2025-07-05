@@ -30,8 +30,8 @@ function SignIn(){
             paragragh = ""
 
         />
-        <div className='flex min-h-screen bg-[#F9FAFB]'>
-            <div className='w-full lg:w-1/2 flex flex-col lg:flex-row items-center justify-center'>
+        <div className='flex bg-[#F9FAFB] h-screen'>
+            <div className='auth-pages w-full overflow-hidden lg:w-1/2 flex flex-col lg:flex-row items-center justify-center'>
                 <h1 className='font-black text-3xl tracking-wide fixed top-10 lg:hidden text-[#D470B7]'>WALLETBITS</h1>
                 <AuthForm 
 

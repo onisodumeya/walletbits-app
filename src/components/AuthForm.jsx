@@ -4,7 +4,7 @@ import { Link } from "react-router-dom"
 export const AuthForm = ({ method, heading, subHeading, inputs, buttonText, buttonLink, hasAccount = false, noAccount = false, forgotPassword = false, extra }) => {
 
     return(
-        <form method={method} className="flex flex-col shadow-md items-center w-4/5 bg-white px-8 py-6 rounded-[20px] gap-4">
+        <form method={method} className="flex flex-col shadow-md items-center w-11/12 md:w-4/5 bg-white px-8 py-6 rounded-[20px] gap-4">
             <button className="self-start flex gap-2.5 cursor-pointer" type='button' onClick={(e) => {e.preventDefault();
                 window.history.back()}}>
                 <img src={Arrow} alt="" className='w-4'/>

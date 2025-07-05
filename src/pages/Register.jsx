@@ -25,9 +25,9 @@ function Register() {
         closeModal={handleCloseModal}
         />
         
-        <div className='flex min-h-screen bg-[#F9FAFB]'>
-            <div className='w-full lg:w-1/2 flex flex-col lg:flex-row items-center justify-center'>
-                <h1 className='font-black text-3xl tracking-wide fixed top-10 lg:hidden text-[#D470B7]'>WALLETBITS</h1>
+            <div className='flex max-h-screen'>
+                <div className='auth-pages pt-40 bg-[#F9FAFB] max-h-screen lg:h-fit lg:overflow-scroll w-full lg:pt-40 lg:pb-10 lg:w-1/2 flex flex-col lg:flex-row items-center justify-center'>
+                <h1 className='font-black text-3xl tracking-wide absolute top-5 lg:hidden text-[#D470B7]'>WALLETBITS</h1>
 
                 <AuthForm
 
