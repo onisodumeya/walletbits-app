@@ -31,7 +31,7 @@ function SignIn(){
 
         />
         <div className='flex bg-[#F9FAFB] h-screen'>
-            <div className='auth-pages w-full overflow-hidden lg:w-1/2 flex flex-col lg:flex-row items-center justify-center'>
+                <div className='auth-pages pt-20 lg:pt-0 w-full overflow-hidden lg:w-1/2 flex flex-col lg:flex-row items-center justify-start lg:justify-center'>
                 <h1 className='font-black text-3xl tracking-wide absolute top-5 lg:hidden text-[#D470B7]'>WALLETBITS</h1>
                 <AuthForm 
 
