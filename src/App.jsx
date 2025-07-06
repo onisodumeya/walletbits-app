@@ -4,7 +4,7 @@ import About from './pages/AboutUs.jsx'
 import HowItWorks from './pages/HowItWorks.jsx';
 import Register from './pages/Register.jsx';
 import SignIn from './pages/SignIn.jsx';
-import { ForgotPassword, Otp } from './pages/ForgotPassword.jsx';
+import { ForgotPassword, OTP } from './pages/ForgotPassword.jsx';
 import ResetPassword from './pages/ResetPassword.jsx'
 
 function App() {
@@ -17,7 +17,7 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/sign-in" element={<SignIn />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />
-        <Route path="/otp" element={<Otp />} />
+        <Route path="/otp" element={<OTP />} />
         <Route path="/reset-password" element={<ResetPassword />} />
       </Routes>
     </Router>
