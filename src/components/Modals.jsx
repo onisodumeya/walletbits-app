@@ -4,7 +4,7 @@ import Success from '../assets/svgs/success-icon.svg'
 
 import { Link } from 'react-router-dom'
 
-function Modal({ priBtn = true, secBtn = false, successImg = false, priBtnLink, priBtnText, secBtnLink, secBtnText, openModal, closeModal, heading, paragragh, click}) {
+function Modal({ priBtn = true, secBtn = false, successImg = false, priBtnLink, priBtnText, secBtnLink, secBtnText, openModal, closeModal, heading, paragragh, click, text}) {
 
     
 
@@ -20,6 +20,7 @@ function Modal({ priBtn = true, secBtn = false, successImg = false, priBtnLink, 
                         <div className="flex flex-col place-items-center gap-4">
                             <h1 className="text-center text-3xl">{heading}</h1>
                             <p className='text-center text-sm text-[#8E9A9A]'>{paragragh}</p>
+                            <p className='text-center text-sm text-[#8E9A9A]'>{text}</p>
                         </div>
 
                         <div className='w-full flex flex-col gap-2.5'>

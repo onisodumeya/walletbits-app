@@ -4,6 +4,7 @@ import About from './pages/AboutUs.jsx'
 import HowItWorks from './pages/HowItWorks.jsx';
 import Register from './pages/Register.jsx';
 import SignIn from './pages/SignIn.jsx';
+import ForgotPassword from './pages/ForgotPassword.jsx';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/how-it-works" element={<HowItWorks />} />
         <Route path="/register" element={<Register />} />
         <Route path="/sign-in" element={<SignIn />} />
+        <Route path="/forgot-password" element={<ForgotPassword />} />
       </Routes>
     </Router>
   );

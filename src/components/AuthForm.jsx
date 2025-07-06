@@ -1,7 +1,7 @@
 import Arrow from '../assets/svgs/previous-arrow.svg'
 import { Link } from "react-router-dom"
 
-export const AuthForm = ({ method, heading, subHeading, inputs, buttonText, buttonLink, hasAccount = false, noAccount = false, forgotPassword = false, extra }) => {
+export const AuthForm = ({ method, heading, subHeading, inputs, buttonText, buttonLink, hasAccount = false, noAccount = false, forgotPassword = false, extra, text}) => {
 
     return(
         <form method={method} className="flex flex-col shadow-md items-center w-11/12 md:w-4/5 bg-white px-8 py-6 rounded-[20px] gap-4">
@@ -13,6 +13,7 @@ export const AuthForm = ({ method, heading, subHeading, inputs, buttonText, butt
 
             <div className="flex flex-col gap-4">
                 <h1 className="text-center place-items-center text-4xl">{heading}</h1>
+                <p className="text-center place-items-center font-thin text-gray-400">{text}</p>
                 <p>{subHeading}</p>
             </div>
 
