@@ -13,7 +13,7 @@ function Modal({ priBtn = true, secBtn = false, successImg = false, priBtnLink, 
         <>
 
             {openModal && 
-                <div className='absolute w-full top-0 left-0 flex items-center justify-center h-screen bg-[rgba(0,0,0,0.05)]'>
+                <div className='absolute w-full top-0 left-0 flex items-center justify-center h-screen bg-[rgba(0,0,0,0.05)] z-50'>
                     <div className={`w-4/5 lg:max-w-md flex flex-col gap-5 py-6 px-8 rounded-2xl border ${borderColor} border-t-4 place-items-center bg-white shadow-md`}>
                         <img src={Close} alt="" className='w-7 self-end mb-5 cursor-pointer' onClick={closeModal}/>
                         {successImg && <img src={Success} alt="" className='w-15' />}
