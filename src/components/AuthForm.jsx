@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 import { useRef, useEffect } from 'react'
 import { gsap } from 'gsap/all'
 
-export const AuthForm = ({ method, heading, subHeading, inputs, buttonText, buttonLink, hasAccount = false, noAccount = false, forgotPassword = false, extra, text, click}) => {
+export const AuthForm = ({ method, heading, subHeading, inputs, buttonText, buttonLink, hasAccount = false, noAccount = false, forgotPassword = false, extra, text, extraButtons, click}) => {
 
     const formRef = useRef(null);
 
@@ -43,6 +43,10 @@ export const AuthForm = ({ method, heading, subHeading, inputs, buttonText, butt
                     {buttonText}
                 </button>
             </Link>
+
+            <div className='flex flex-col md:flex-row justify-between items-center w-full gap-5'>
+                {extraButtons}
+            </div>
 
             {hasAccount && <p>Already have an account?{" "}<Link to='/sign-in' className="text-[#D470B7]">Login</Link></p>}
             {noAccount && <p>Don't have an account?{" "}<Link to='/register' className="text-[#D470B7]">Sign up</Link></p>}

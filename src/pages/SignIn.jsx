@@ -1,5 +1,7 @@
 import ImageBg from '../components/AuthImageBg.jsx'
 import Modal from '../components/Modals.jsx'
+import Google from '../assets/svgs/google.svg'
+import Apple from '../assets/svgs/apple.svg'
 
 import { Link } from 'react-router-dom';
 import {AuthForm, Input} from '../components/AuthForm.jsx'
@@ -62,6 +64,19 @@ function SignIn(){
                     }
 
                     buttonText = "Log in"
+
+                    extraButtons={
+                        <>
+                            <button className='flex gap-2 border border-[#E6E6E6] rounded-full py-2 w-full justify-center cursor-pointer hover:border-black transition duration-300'>
+                                    <img src={Google} alt="" />
+                                    <p>Login with Google</p>
+                                </button>
+                            <button className='flex gap-2 border border-[#E6E6E6] rounded-full py-2 w-full justify-center cursor-pointer hover:border-black transition duration-300'>
+                                    <img src={Apple} alt="" />
+                                    <p>Login with Apple</p>
+                                </button>
+                        </>
+                    }
 
                     // buttonLink = {}
 
