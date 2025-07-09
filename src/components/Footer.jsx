@@ -50,7 +50,7 @@ function Footer() {
 
         <div className={`${isMobile ? 'flex-col' : 'flex-row'} flex  border border-green-500  w-full p-5 gap-10 justify-between`}>
           <div className={`${isMobile ? 'w-full' : 'w-1/2'} sections flex flex-col w-1/2" id="fir`}>
-            <h1 className="head mb-5">WALLETBITS</h1>
+            <h1 className="text-2xl mb-5">WALLETBITS</h1>
             <p className="mb-5 text-gray-50 text-[14px]">Join our newsletter to get notified about all new releases and features.</p>
             <form className="mb-5">
               <input
