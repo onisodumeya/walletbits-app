@@ -45,8 +45,8 @@ function Footer() {
 
 
   return (
-    <footer ref={footerRef} className="pt-10 px-5 md:px-15 opacity-0">
-      <div className="foot rounded-t-4xl">
+    <footer ref={footerRef} className={`${isMobile ? 'px-0': 'pt-10 px-5 md:px-15 opacity-0'}`}>
+      <div className={`${isMobile ? 'foot rounded-none' : 'foot rounded-t-4xl'}`}>
 
         <div className={`${isMobile ? 'flex-col' : 'flex-row'} flex  border border-green-500  w-full p-5 gap-10 justify-between`}>
           <div className={`${isMobile ? 'w-full' : 'w-1/2'} sections flex flex-col w-1/2" id="fir`}>

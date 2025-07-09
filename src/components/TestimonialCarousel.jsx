@@ -57,9 +57,9 @@ export default function TestimonialCarousel() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center py-10 px-4 bg-white text-center w-full">
+    <div className="flex flex-col items-center justify-center pb-10 px-0 bg-white text-center w-full">
       {/* Feedback Cards */}
-      <div className="flex space-x-4 overflow-hidden w-full max-w-5xl justify-center py-5">
+      <div className="flex space-x-3 overflow-hidden w-full justify-center py-5">
         {getVisibleTestimonials().map((index) => {
           const testimonial = testimonials[index];
           const isActive = index === active;
