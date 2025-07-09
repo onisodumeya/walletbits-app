@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Arrow from '../assets/svgs/carousel-arrow.svg'; // Make sure this path is correct
+import Arrow from '../assets/svgs/carousel-arrow.svg'; 
 
 import jpgmoses from '../assets/pngs/moses.jpg'
 import jpggenevieve from '../assets/pngs/genevieve.jpg'
@@ -59,7 +59,7 @@ export default function TestimonialCarousel() {
   return (
     <div className="flex flex-col items-center justify-center py-10 px-4 bg-white text-center w-full">
       {/* Feedback Cards */}
-      <div className="flex space-x-4 overflow-hidden w-full max-w-5xl justify-center">
+      <div className="flex space-x-4 overflow-hidden w-full max-w-5xl justify-center py-5">
         {getVisibleTestimonials().map((index) => {
           const testimonial = testimonials[index];
           const isActive = index === active;
@@ -70,7 +70,7 @@ export default function TestimonialCarousel() {
               onClick={() => handleSlideClick(index)}
               className={`flex flex-col items-center p-5 rounded-xl shadow-md cursor-pointer transition-all duration-300 transform w-[300px] ${
                 isActive
-                  ? "scale-105 bg-gradient-to-b from-[#4A0D43] via-[#383335] to-[#9B3B91] text-white border-2 border-white z-10"
+                ? "scale-105 bg-gradient-to-r from-[#9B3B91] via-[#383335] to-[#9B3B91] text-white rounded-3xl z-10"
                   : "scale-95 bg-[#383335] text-white z-0"
               }`}
             >
@@ -87,17 +87,17 @@ export default function TestimonialCarousel() {
       </div>
 
       {/* Arrows + Fixed 3-Slot Numbering Carousel */}
-      <div className="flex items-center space-x-2 mt-6">
+      <div className="flex gap-2.5 items-center space-x-2 mt-6">
         {/* Left Arrow */}
         <button
           onClick={prev}
-          className="flex items-center justify-center w-[47px] h-[58px] rounded-md bg-black text-white"
+          className="flex items-center justify-center w-[40px] h-[50px] rounded-md bg-black text-white"
         >
           <img src={Arrow} alt="Left" className="w-4 h-4 rotate-180" />
         </button>
 
         {/* Numbering Carousel (3 Static Slots) */}
-        <div className="flex space-x-2">
+        <div className="flex gap-2.5 items-center space-x-2">
           {getVisiblePagination().map((index, idx) => {
             const isCenter = idx === 1;
             return (
@@ -106,8 +106,8 @@ export default function TestimonialCarousel() {
                 onClick={() => setActive(index)}
                 className={`flex items-center justify-center text-sm rounded-[10px] cursor-pointer transition-all ${
                   isCenter
-                    ? "w-[39px] h-[103px] bg-[#93487D] text-white"
-                    : "w-[39px] h-[70px] bg-black text-white"
+                    ? "w-[39px] h-[70px] bg-[#93487D] text-white"
+                    : "w-[39px] h-[60px] bg-black text-white"
                 }`}
               >
                 {index + 1}
@@ -119,7 +119,7 @@ export default function TestimonialCarousel() {
         {/* Right Arrow */}
         <button
           onClick={next}
-          className="flex items-center justify-center w-[47px] h-[58px] rounded-md bg-black text-white"
+          className="flex items-center justify-center w-[40px] h-[50px] rounded-md bg-black text-white"
         >
           <img src={Arrow} alt="Right" className="w-4 h-4" />
         </button>
