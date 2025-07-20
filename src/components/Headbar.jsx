@@ -5,10 +5,10 @@ import { FaBell } from "react-icons/fa";
 
 function Headbar({ profile, header, subHeader, search }) {
     return (
-        <div className="justify-between gap-4 flex h-fit w-full bg-gray-100">
-            <div className="flex-col">
+        <div className="justify-between gap-4 flex items-center h-fit w-full bg-gray-100">
+            <div className="flex-col h-fit">
                 <h1 className="font-bold text-2xl text-black">{header}</h1>
-                <p className="text-gray-500">{subHeader}</p>
+                {subHeader && <p className="text-gray-500">{subHeader}</p>}
             </div>
             <div className="flex w-2/5 items-center justify-between">
                 <FaBell className="text-2xl" />

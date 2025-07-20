@@ -5,6 +5,7 @@ import Register from './pages/Register.jsx';
 import SignIn from './pages/SignIn.jsx';
 import ResetPassword from './pages/ResetPassword.jsx'
 import Overview from './pages/user-dashboard/Overview.jsx';
+import Verification from './pages/user-dashboard/profile/Verification.jsx';
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ForgotPassword, OTP } from './pages/ForgotPassword.jsx';
@@ -22,6 +23,7 @@ function App() {
         <Route path="/otp" element={<OTP />} />
         <Route path="/reset-password" element={<ResetPassword />} />
         <Route path="/overview" element={<Overview />} />
+        <Route path="/verification" element={<Verification />} />
       </Routes>
     </Router>
   );
