@@ -1,10 +1,10 @@
 import React from 'react';
+import axios from 'axios';
 import { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 
-function AccountCard({ title, fetchAmount,icon }) {
+function AccountCard({ title, icon, fetchAmount, amount }) {
     const [dateTime, setDateTime] = useState("");
-    const [amount, setAmount] = useState("0.00");
 
     useEffect(() => {
         // Live date-time
@@ -22,7 +22,7 @@ function AccountCard({ title, fetchAmount,icon }) {
         // Amount fetcher
         const getAmount = async () => {
             try {
-                const response = await fetchAmount(); // fetchAmount is a function prop
+                const response = await axios.get('');
                 setAmount(response);
             } catch (error) {
                 console.error("Failed to fetch amount:", error);
@@ -30,7 +30,7 @@ function AccountCard({ title, fetchAmount,icon }) {
         };
 
         getAmount();
-        const amountInterval = setInterval(getAmount, 10000); // refresh amount every 10 seconds
+        const amountInterval = setInterval(getAmount, 10000);
 
         return () => {
             clearInterval(timeInterval);
@@ -58,6 +58,7 @@ function AccountCard({ title, fetchAmount,icon }) {
     );
 }
 AccountCard.proptypes={
+    amount: PropTypes.number,
     title: PropTypes.string,
     fetchAmount: PropTypes.func
 };
