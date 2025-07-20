@@ -1,9 +1,6 @@
 import { MdDashboard } from "react-icons/md";
-import { FaHistory, FaWallet } from "react-icons/fa";
-import { CgProfile } from "react-icons/cg";
-import { FiSettings } from "react-icons/fi";
-import { RiShoppingBag3Line } from "react-icons/ri";
-import { BiLogOut } from "react-icons/bi";
+import { FaHistory, FaWallet, FaUser, FaWhmcs, FaShoppingBag } from "react-icons/fa";
+import { FaArrowRightFromBracket } from "react-icons/fa6";
 import { NavLink } from "react-router-dom";
 
 function SideBar() { 
@@ -12,10 +9,10 @@ function SideBar() {
         { name: "Dashboard", link: "/overview", icon: <MdDashboard /> },
         { name: "Transaction History", link: "/transaction-history", icon: <FaHistory /> },
         { name: "Wallet", link: "/wallet", icon: <FaWallet /> },
-        { name: "Profile", link: "/profile", icon: <CgProfile /> },
-        { name: "Settings", link: "/settings", icon: <FiSettings /> },
-        { name: "Market", link: "/market", icon: <RiShoppingBag3Line /> },
-        { name: "Logout", link: "/logout", icon: <BiLogOut /> },
+        { name: "Profile", link: "/profile", icon: <FaUser /> },
+        { name: "Settings", link: "/settings", icon: <FaWhmcs /> },
+        { name: "Market", link: "/market", icon: <FaShoppingBag /> },
+        { name: "Logout", link: "/logout", icon: <FaArrowRightFromBracket className="rotate-180" /> },
 
 
     ]

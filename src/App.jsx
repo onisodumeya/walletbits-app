@@ -23,7 +23,7 @@ function App() {
         <Route path="/otp" element={<OTP />} />
         <Route path="/reset-password" element={<ResetPassword />} />
         <Route path="/overview" element={<Overview />} />
-        <Route path="/verification" element={<Verification />} />
+        <Route path="/settings/verification" element={<Verification />} />
       </Routes>
     </Router>
   );
