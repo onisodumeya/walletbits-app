@@ -3,7 +3,7 @@ import { useMediaQuery } from 'react-responsive';
 import { NavLink } from "react-router-dom";
 import { PriBtn, SecBtn } from '../components/Buttons.jsx';
 
-import { gsap } from 'gsap/all'
+import { gsap } from 'gsap'
 
 import Menu from '../assets/svgs/menu-btn.svg';
 

@@ -2,14 +2,15 @@ import ImageBg from '../components/AuthImageBg.jsx'
 import Modal from '../components/Modals.jsx'
 import Google from '../assets/svgs/google.svg'
 import Apple from '../assets/svgs/apple.svg'
+import axios from 'axios'
 
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import {AuthForm, Input} from '../components/AuthForm.jsx'
 import { useState, useEffect, useRef } from 'react'
 
 function SignIn(){
 
-    const [isModalopen, setCloseModal] = useState(false)
+    const [isModalopen, setCloseModal] = useState(false);
 
     const handleOpenModal = () => {
         setCloseModal(true)
@@ -20,6 +21,52 @@ function SignIn(){
         setCloseModal(false)
         document.body.style.overflow = "scroll"
     }
+
+
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
+
+    const [error, setError] = useState('');
+    const [loading, setLoading] = useState(false);
+
+    const [isLoggingIn, setIsLoggingIn] = useState(false)
+
+    const navigate = useNavigate();
+
+    const handleSignin = async (e) => {
+        e.preventDefault();
+        setLoading(true);
+        setError('');
+
+        setIsLoggingIn(true)
+
+        try {
+            const response = await axios.post('https://api-walletbits.82.29.170.171.nip.io/api/v1/auth/login', {
+                email, 
+                password
+            }, {
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                }
+        })
+            const accessToken = response.data.data.accessToken;
+            const refreshToken = response.headers.authorization;
+
+            console.log('Access Token:', accessToken);
+            console.log('Refresh Token:', refreshToken);
+
+            localStorage.setItem('userEmail', email);
+            localStorage.setItem('accessToken', accessToken);
+            localStorage.setItem('refreshToken', refreshToken);
+
+            navigate('/otp', { state: { from: 'sign-in' } });
+            
+        } catch (err) {
+            console.error('Login failed:', err.response?.data);
+            setError(err.response?.data?.message || 'Login failed. Please try again.');
+        }
+    }
+
 
     return(
         <>
@@ -49,6 +96,8 @@ function SignIn(){
                                 placeholder = "mosesjoseph@gmail.com"
                                 name = "email"
                                 inputType = "email"
+                                value={email}
+                                change={(e) => setEmail(e.target.value)}
 
                             />
 
@@ -57,13 +106,17 @@ function SignIn(){
                                 labelText = "Password"
                                 name = "password"
                                 inputType = "password"
+                                value={password}
+                                change={(e) => setPassword(e.target.value)}
+
 
                             />
                         
                         </>
                     }
 
-                    buttonText = "Log in"
+                    click={isLoggingIn ? null : handleSignin}
+                    btnType='submit'
 
                     extraButtons={
                         <>
@@ -79,6 +132,8 @@ function SignIn(){
                     }
 
                     // buttonLink = {}
+
+                        buttonText={isLoggingIn ? "Logging in..." : "Log in"}
 
                     noAccount = {true}
 

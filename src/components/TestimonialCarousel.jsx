@@ -1,9 +1,9 @@
 import { useState } from "react";
 import Arrow from '../assets/svgs/carousel-arrow.svg'; 
 
-import jpgmoses from '../assets/pngs/moses.jpg'
-import jpggenevieve from '../assets/pngs/genevieve.jpg'
-import jpgprecious from '../assets/pngs/precious.jpg'
+// import jpgmoses from '../assets/pngs/moses.jpg'
+// import jpggenevieve from '../assets/pngs/genevieve.jpg'
+// import jpgprecious from '../assets/pngs/precious.jpg'
 
 const testimonials = [
   {

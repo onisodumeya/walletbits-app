@@ -1,8 +1,9 @@
 import ImageBg from '../components/AuthImageBg.jsx'
 import Modal from '../components/Modals.jsx'
+import axios from 'axios'
 import { AuthForm, Input } from '../components/AuthForm.jsx'
-import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { useState, useEffect } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
 import { FaEye, FaEyeSlash } from 'react-icons/fa'
 
 function Register() {
@@ -16,6 +17,75 @@ function Register() {
 
     const handleOpenModal = () => setCloseModal(true)
     const handleCloseModal = () => setCloseModal(false)
+
+    const [username, setUsername] = useState('');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [confirmPassword, setConfirmPassword] = useState('')
+    const [error, setError] = useState('')
+    const [message, setMessage] = useState('')
+    const [messageColor, setMessageColor] = useState('')
+
+    const navigate = useNavigate()
+
+    useEffect(() => {
+
+        if(confirmPassword === ""){
+            setMessageColor("");
+            setMessage("");
+            return;
+        }
+
+        if(confirmPassword !== password){
+            setMessageColor("text-red-500");
+            setMessage("Passwords do not match");
+        } else {
+            setMessageColor("");
+            setMessage("");
+        }
+
+    }, [password, confirmPassword]);
+
+    const handleRegistration = async (e) => {
+        e.preventDefault()
+
+        if (!username || !email || !password) {
+            setMessage("All fields are required.");
+            return;
+        }
+
+        
+
+        try{
+            const formData = new URLSearchParams();
+            formData.append("username", username);
+            formData.append("email", email);
+            formData.append("password", password);
+
+            const response = await axios.post(
+                'https://api-walletbits.82.29.170.171.nip.io/api/v1/auth/signup',
+                    formData,
+                 {
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded',
+                    }
+                }
+            );
+            const accessToken = response.data.data.accessToken;
+
+            localStorage.setItem('accessToken', accessToken);
+
+            console.log("Registration Successfull");
+            localStorage.setItem('userEmail', email)
+            navigate('/otp', { state: { from: 'register' } });
+            
+        } catch (err) {
+            console.log("❌ Error Response:", err.response?.data);
+            console.log("❌ Status Code:", err.response?.status);
+            console.log("❌ Headers:", err.response?.headers);
+            setError(err.response?.data?.message || 'Sign-up failed. Try again.')
+        }
+    }
 
     return (
         <>
@@ -35,21 +105,24 @@ function Register() {
                                 <Input
                                     labelText="Full Name"
                                     placeholder="Moses Charles"
-                                    id="fullName"
+                                    value={username}
+                                    change={(e) => setUsername(e.target.value)}
                                 />
                                 <Input
                                     labelText="Email Address"
                                     placeholder="moses12345@gmail.com"
-                                    id="Email"
+                                    value = {email}
                                     inputType="email"
+                                    change={(e) => setEmail(e.target.value)}
                                 />
 
                                 {/* Password Field with Eye Toggle */}
                                 <div className="relative">
                                     <Input
                                         labelText="Password"
-                                        id="password"
+                                        value={password}
                                         inputType={showPassword ? "text" : "password"}
+                                        change={(e) => setPassword(e.target.value)}
                                     />
                                     <div className="absolute right-3 bottom-3 cursor-pointer" onClick={togglePassword}>
                                         {showPassword ? <FaEyeSlash /> : <FaEye />}
@@ -62,15 +135,19 @@ function Register() {
                                         labelText="Confirm Password"
                                         id="confirmPassword"
                                         inputType={showConfirmPassword ? "text" : "password"}
+                                        change={(e) => setConfirmPassword(e.target.value)}
                                     />
                                     <div className="absolute right-3 bottom-3 cursor-pointer" onClick={toggleConfirmPassword}>
                                         {showConfirmPassword ? <FaEyeSlash /> : <FaEye />}
                                     </div>
                                 </div>
+                                
                             </>
                         }
+                        extra={<p className={`text-start ${messageColor}`}>{message}</p>}
+
                         buttonText="Sign Up"
-                        buttonLink='/modal'
+                        click={handleRegistration}
                         hasAccount={true}
                     />
                 </div>

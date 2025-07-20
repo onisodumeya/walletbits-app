@@ -1,6 +1,6 @@
 import Image from '../assets/pngs/why-choose-img.png'
 
-import { gsap } from 'gsap/all'
+import { gsap } from 'gsap'
 import { useEffect, useRef } from 'react'
 
 function ImageBg(){
@@ -21,7 +21,7 @@ function ImageBg(){
         gsap.fromTo(
             headerRef.current,
             { y: -100, opacity: 0 },
-            { y: 0, opacity: 1, duration: 1, ease: "power3.out", once: true }
+            { y: 0, opacity: 1, duration: 1, ease: "power3.out" }
         )
     }, [])
 

@@ -1,7 +1,8 @@
 import { Link } from 'react-router-dom'
 import { useMediaQuery } from 'react-responsive'
 import { useEffect, useRef } from 'react'
-import { gsap, ScrollTrigger } from 'gsap/all'
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -31,7 +32,6 @@ function Footer() {
           trigger: footerRef.current,
           start: "top 80%",
           toggleActions: "play none none none",
-          once: true,
         },
 
         y: 0,

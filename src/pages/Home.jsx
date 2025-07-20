@@ -2,7 +2,8 @@ import { useState, useEffect, useRef } from "react";
 import { useMediaQuery } from 'react-responsive';
 import { PriBtn, SecBtn } from "../components/Buttons.jsx";
 import { Link } from 'react-router-dom';
-import { gsap, ScrollTrigger } from 'gsap/all';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -46,7 +47,7 @@ function Home() {
             trigger: cardLeftRef.current, 
             start: "top 80%", 
             toggleActions: "play none none none", 
-            once: true,},
+            },
           
             x: 0, 
             opacity: 1, 
@@ -66,7 +67,7 @@ function Home() {
             trigger: cardLeftRef2.current, 
             start: "top 80%", 
             toggleActions: "play none none none", 
-            once: true,},
+            },
           
             x: 0, 
             opacity: 1, 
@@ -86,7 +87,7 @@ function Home() {
               trigger: cardRightRef.current,
               start: "top 80%",
               toggleActions: "play none none none",
-              once: true,
+              
             },
 
             x: 0,
@@ -116,7 +117,7 @@ function Home() {
             trigger: textRef.current,
             start: "top 80%",
             toggleActions: "play none none none",
-            once: true,
+            
           },
 
           x: 0,
@@ -135,7 +136,7 @@ function Home() {
             trigger: textRef.current,
             start: "top 80%",
             toggleActions: "play none none none",
-            once: true,
+            
           },
 
           y: 0,
@@ -167,7 +168,7 @@ function Home() {
             trigger: textRef.current,
             start: "top 80%",
             toggleActions: "play none none none",
-            once: true,
+            
           },
 
           x: 0,
@@ -186,7 +187,7 @@ function Home() {
             trigger: textRef.current,
             start: "top 80%",
             toggleActions: "play none none none",
-            once: true,
+            
           },
 
           y: 0,
@@ -218,7 +219,7 @@ function Home() {
             trigger: testimonialRef.current,
             start: "top 80%",
             toggleActions: "play none none none",
-            once: true,
+            
           },
 
           y: 0,
@@ -249,7 +250,7 @@ function Home() {
             trigger: textRef.current,
             start: "top 80%",
             toggleActions: "play none none none",
-            once: true,
+            
           },
 
           y: 0,
