@@ -60,13 +60,25 @@ function Navbar() {
         <div className='flex items-center gap-10'>
           <div className='flex gap-8'>
 
-            <NavLink to="/" className={({ isActive }) => isActive ? "font-medium border-b-2 border-black" : "border-b-2 border-transparent nav-links"}>Home</NavLink>
+              <NavLink to="/" className={({ isActive }) => isActive ? "font-medium border-b-2 border-black" : "group flex flex-col"}>
+                <p>Home</p>
+                <div className="bg-black rounded-full h-[1px] w-0 group-hover:w-full transition-all duration-300"></div>
+              </NavLink>
 
-            <NavLink to="/how-it-works" className={({ isActive }) => isActive ? "font-medium border-b-2 border-black" : "border-b-2 border-transparent nav-links transition-[0.3s]"}>How it Works</NavLink>
+              <NavLink to="/how-it-works" className={({ isActive }) => isActive ? "font-medium border-b-2 border-black" : "group flex flex-col"}>
+                <p>How it Works</p>
+                <div className="bg-black rounded-full h-[2px] w-0 group-hover:w-full transition-all duration-300"></div>
+              </NavLink>
 
-            <NavLink to="/rates" className={({ isActive }) => isActive ? "font-medium border-b-2 border-black" : "border-b-2 border-transparent nav-links transition-[0.3s]"}>Rates</NavLink>
+              <NavLink to="/rates" className={({ isActive }) => isActive ? "font-medium border-b-2 border-black" : "group flex flex-col"}>
+                <p>Rates</p>
+                <div className="bg-black rounded-full h-[2px] w-0 group-hover:w-full transition-all duration-300"></div>
+              </NavLink>
 
-            <NavLink to="/about-us" className={({ isActive }) => isActive ? "font-medium border-b-2 border-black" : "border-b-2 border-transparent nav-links transition-[0.3s]"}>About us</NavLink>
+              <NavLink to="/about-us" className={({ isActive }) => isActive ? "font-medium border-b-2 border-black" : "group flex flex-col"}>
+                <p>About us</p>
+                <div className="bg-black rounded-full h-[2px] w-0 group-hover:w-full transition-all duration-300"></div>
+              </NavLink>
 
           </div>
 
