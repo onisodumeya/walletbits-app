@@ -10,6 +10,7 @@ import Verification from './pages/user-dashboard/profile/Verification.jsx';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ForgotPassword, OTP } from './pages/ForgotPassword.jsx';
 import Transaction from './pages/user-dashboard/Transaction.jsx';
+import Notification from './pages/user-dashboard/profile/Notification.jsx';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
         <Route path="/overview" element={<Overview />} />
         <Route path="/transaction-history" element={<Transaction />} />
         <Route path="/settings/verification" element={<Verification />} />
+        <Route path="/settings/notification" element={<Notification />} />
       </Routes>
     </Router>
   );
