@@ -60,7 +60,7 @@ function SignIn(){
             localStorage.setItem('accessToken', accessToken);
             localStorage.setItem('refreshToken', refreshToken);
 
-            // navigate('/otp', { state: { from: 'sign-in' } });
+            navigate('/otp', { state: { from: 'sign-in' } });
             
         } catch (err) {
             console.error('Login failed:', err);
