@@ -1,11 +1,11 @@
-import ImageBg from '../components/AuthImageBg.jsx'
-import Modal from '../components/Modals.jsx'
-import Google from '../assets/svgs/google.svg'
-import Apple from '../assets/svgs/apple.svg'
+import ImageBg from '../../components/AuthImageBg.jsx'
+import Modal from '../../components/Modals.jsx'
+import Google from '../../assets/svgs/google.svg'
+import Apple from '../../assets/svgs/apple.svg'
 import axios from 'axios'
 
 import { Link, useNavigate } from 'react-router-dom';
-import {AuthForm, Input} from '../components/AuthForm.jsx'
+import {AuthForm, Input} from '../../components/AuthForm.jsx'
 import { useState, useEffect, useRef } from 'react'
 
 function SignIn(){
