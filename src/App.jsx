@@ -1,8 +1,8 @@
 import Home from './pages/Home.jsx';
 import About from './pages/AboutUs.jsx'
 import HowItWorks from './pages/HowItWorks.jsx';
-import Register from './pages/Register.jsx';
-import SignIn from './pages/SignIn.jsx';
+import Register from './pages/authentication/Register.jsx';
+import SignIn from './pages/authentication/SignIn.jsx';
 import ResetPassword from './pages/ResetPassword.jsx'
 import Overview from './pages/user-dashboard/Overview.jsx';
 import Verification from './pages/user-dashboard/profile/Verification.jsx';
@@ -27,7 +27,7 @@ function App() {
         <Route path="/overview" element={<Overview />} />
         <Route path="/transaction-history" element={<Transaction />} />
         <Route path="/settings/verification" element={<Verification />} />
-        <Route path="/settings/notification" element={<Notification />} />
+        <Route path="/settings/notifications" element={<Notification />} />
       </Routes>
     </Router>
   );

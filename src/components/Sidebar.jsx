@@ -17,7 +17,7 @@ function SideBar() {
 
     ]
     return (
-        <div className=" h-full w-full bg-white shadow-xl shadow-gray-300 rounded-2xl flex flex-col justify-between py-5 px-2.5">
+        <div className=" h-full w-full bg-white shadow-md shadow-gray-200 rounded-2xl flex flex-col justify-between py-5 px-2.5">
             <div className="text-left">
                 <h1 className="text-xl font-bold text-pink-500">WALLETBITS</h1>
             </div>
