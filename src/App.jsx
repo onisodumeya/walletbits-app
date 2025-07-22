@@ -5,12 +5,13 @@ import Register from './pages/authentication/Register.jsx';
 import SignIn from './pages/authentication/SignIn.jsx';
 import ResetPassword from './pages/ResetPassword.jsx'
 import Overview from './pages/user-dashboard/Overview.jsx';
-import Verification from './pages/user-dashboard/profile/Verification.jsx';
+import Notification from './pages/user-dashboard/settings/Notification.jsx';
+import Verification from './pages/user-dashboard/settings/Verification.jsx';
+import ProfileSettings from './pages/user-dashboard/settings/ProfileSettings.jsx';
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ForgotPassword, OTP } from './pages/ForgotPassword.jsx';
 import Transaction from './pages/user-dashboard/Transaction.jsx';
-import Notification from './pages/user-dashboard/profile/Notification.jsx';
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
         <Route path="/transaction-history" element={<Transaction />} />
         <Route path="/settings/verification" element={<Verification />} />
         <Route path="/settings/notifications" element={<Notification />} />
+        <Route path="/settings/profile-settings" element={<ProfileSettings />} />
       </Routes>
     </Router>
   );

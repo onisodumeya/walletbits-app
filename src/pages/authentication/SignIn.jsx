@@ -142,7 +142,7 @@ function SignIn(){
 
                     // buttonLink = {}
 
-                        buttonText={isLoggingIn ? "Logging in..." : "Log in"}
+                    buttonText={isLoggingIn ? "Logging in..." : "Log in"}
 
                     noAccount = {true}
 

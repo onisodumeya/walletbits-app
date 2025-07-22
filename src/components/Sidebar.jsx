@@ -1,17 +1,19 @@
 import { MdDashboard } from "react-icons/md";
 import { FaHistory, FaWallet, FaUser, FaWhmcs, FaShoppingBag } from "react-icons/fa";
 import { FaArrowRightFromBracket } from "react-icons/fa6";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 
 function SideBar() { 
+
+    const location = useLocation();
     
     const menuItems = [
-        { name: "Dashboard", link: "/overview", icon: <MdDashboard /> },
-        { name: "Transaction History", link: "/transaction-history", icon: <FaHistory /> },
-        { name: "Wallet", link: "/wallet", icon: <FaWallet /> },
-        { name: "Profile", link: "/profile", icon: <FaUser /> },
-        { name: "Settings", link: "/settings", icon: <FaWhmcs /> },
-        { name: "Market", link: "/market", icon: <FaShoppingBag /> },
+        { name: "Dashboard", link: "/overview", icon: <MdDashboard />, active: location.pathname === "/overview" },
+        { name: "Transaction History", link: "/transaction-history", icon: <FaHistory />, active: location.pathname === "/transaction-history", },
+        { name: "Wallet", link: "/wallet", icon: <FaWallet />, active: location.pathname === "/wallet", },
+        { name: "Profile", link: "/profile", icon: <FaUser />, active: location.pathname === "/profile", },
+        { name: "Settings", link: "/settings/profile-settings", icon: <FaWhmcs />, active: location.pathname.startsWith("/settings"), },
+        { name: "Market", link: "/market", icon: <FaShoppingBag />, active: location.pathname === "/market", },
         { name: "Logout", link: "/logout", icon: <FaArrowRightFromBracket className="rotate-180" /> },
 
 
@@ -25,7 +27,7 @@ function SideBar() {
                 <ul className="flex flex-col items-start gap-4 w-full">
                     {menuItems.map((item, index) => (
                         <li key={index} className="w-full">
-                            <NavLink to={item.link} className={({ isActive }) => isActive ? "bg-[#953278] text-white w-full text-sm font-medium cursor-auto px-2.5 py-2 flex items-center gap-3 rounded-lg" : "w-full text-sm font-medium cursor-pointer px-2.5 py-2 flex items-center gap-3 text-black rounded-lg hover:bg-[#953278] hover:text-white transition-all duration-200"}>
+                            <NavLink to={item.link} className={`${item.active ? "bg-[#953278] text-white w-full text-sm font-medium cursor-auto px-2.5 py-2 flex items-center gap-3 rounded-lg" : "w-full text-sm font-medium cursor-pointer px-2.5 py-2 flex items-center gap-3 text-black rounded-lg hover:bg-[#953278] hover:text-white transition-all duration-200"}`}>
                                 <span className="text-lg">{item.icon}</span>{item.name}
                             </NavLink>
                         </li>

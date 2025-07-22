@@ -28,6 +28,8 @@ function Register() {
 
     const navigate = useNavigate()
 
+    const [isRegistering, setIsRegistering] = useState(false)
+
     useEffect(() => {
 
         if (confirmPassword === "") {
@@ -46,8 +48,8 @@ function Register() {
 
     }, [password, confirmPassword]);
 
-    const handleRegistration = async (e) => {
-        e.preventDefault()
+    const handleRegistration = async () => {
+        setIsRegistering(true)
 
         if (!username || !email || !password) {
             setMessage("All fields are required.");
@@ -72,14 +74,17 @@ function Register() {
                 }
             );
             const accessToken = response.data.data.accessToken;
+            const refreshToken = response.headers.authorization(" ")[1]
 
             localStorage.setItem('accessToken', accessToken);
+            localStorage.setItem("refreshToken", refreshToken)
 
             console.log("Registration Successfull");
             localStorage.setItem('userEmail', email)
             navigate('/otp', { state: { from: 'register' } });
 
         } catch (err) {
+            setIsRegistering(false)
             console.log("❌ Error Response:", err.response?.data);
             console.log("❌ Status Code:", err.response?.status);
             console.log("❌ Headers:", err.response?.headers);
@@ -146,7 +151,7 @@ function Register() {
                         }
                         extra={<p className={`text-start ${messageColor}`}>{message}</p>}
 
-                        buttonText="Sign Up"
+                        buttonText={isRegistering ? "Registering..." : "Sign up"}
                         click={handleRegistration}
                         hasAccount={true}
                     />
