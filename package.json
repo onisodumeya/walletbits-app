@@ -37,5 +37,18 @@
     "postcss": "^8.5.6",
     "tailwindcss": "^4.1.10",
     "vite": "^6.3.5"
-  }
+  },
+  "description": "1. Clone the repository:\r    ```bash\r    git clone https://github.com/onisodumeya/walletbits-app.git\r    cd walletbits",
+  "main": "eslint.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/onisodumeya/walletbits-app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/onisodumeya/walletbits-app/issues"
+  },
+  "homepage": "https://github.com/onisodumeya/walletbits-app#readme"
 }
