@@ -2,7 +2,7 @@
 import SideBar from '../../components/Sidebar.jsx'
 import Headbar from '../../components/Headbar.jsx'
 import AccountCard from '../../components/FinanceCard.jsx'
-import FinanceChart from '../../components/FinanceChart.jsx'
+import FinanceChart from '../../components/PriceChart.jsx'
 
 import { useState, useEffect } from 'react'
 import { FaWallet, FaArrowAltCircleDown, FaArrowAltCircleUp, FaArrowUp } from "react-icons/fa";
@@ -33,7 +33,7 @@ function Overview() {
         { month: 'Jul', income: 45, expense: 30 },
     ];
 
-    
+
     const [mode, setMode] = useState('buy');
     const [fromToken, setFromToken] = useState('ETH');
     const [toToken, setToToken] = useState('USDT');
@@ -41,7 +41,7 @@ function Overview() {
     const [toAmount, setToAmount] = useState('4');
 
     const rate = 0.0004;
-    
+
     const tokens = [
         { symbol: 'ETH', icon: '💠' },
         { symbol: 'USDT', icon: '💵' },
@@ -76,109 +76,109 @@ function Overview() {
         },
     ];
 
-    return(
-      <>
-      <div className="flex bg-gray-100 gap-5 px-5 relative">
-            <div className='h-screen w-1/5 py-5 sticky top-0'>
-                <SideBar />
-            </div>
-            <div className=" flex flex-col gap-10 w-full py-5">
-                <Headbar header="Dashboard" subHeader="See an overview of your dashboard"/>
-                <div className="flex w-full justify-between gap-5">
+    return (
+        <>
+            <div className="flex bg-gray-100 gap-5 px-5 relative">
+                <div className='h-screen w-1/5 py-5 sticky top-0'>
+                    <SideBar />
+                </div>
+                <div className=" flex flex-col gap-10 w-full py-5">
+                    <Headbar header="Dashboard" subHeader="See an overview of your dashboard" />
+                    <div className="flex w-full justify-between gap-5">
                         <AccountCard title="balance" icon={FaWallet} amount={balance} />
                         <AccountCard title="Total deposit" icon={FaArrowAltCircleDown} amount={deposit} />
-                    <AccountCard title="Total Withdrawal" icon={FaArrowAltCircleUp} amount={withdrawal}/>
-                </div>
-                <div className='flex gap-5'>
-
-                    <div className='w-3/5'>
-                        <FinanceChart 
-                            gap={5}
-                            size={20}
-                            data={data}
-
-                        />
+                        <AccountCard title="Total Withdrawal" icon={FaArrowAltCircleUp} amount={withdrawal} />
                     </div>
+                    <div className='flex gap-5'>
+
+                        <div className='w-3/5'>
+                            <FinanceChart
+                                gap={5}
+                                size={20}
+                                data={data}
+
+                            />
+                        </div>
 
                         <div className="flex flex-col justify-between max-w-sm p-4 bg-white rounded-2xl shadow-md shadow-gray-200 space-y-4">
-                    
-                        {/* Toggle Buy/Exchange */}
-                        <div className="flex justify-between">
-                            <button
-                                onClick={() => setMode('buy')}
+
+                            {/* Toggle Buy/Exchange */}
+                            <div className="flex justify-between">
+                                <button
+                                    onClick={() => setMode('buy')}
                                     className={`px-4 py-1 rounded-md font-semibold ${mode === 'buy' ? 'bg-[#D470B7] text-white' : 'text-[#D470B7]'
-                                    }`}
-                            >
-                                Buy
-                            </button>
-                            <button
-                                onClick={() => setMode('exchange')}
+                                        }`}
+                                >
+                                    Buy
+                                </button>
+                                <button
+                                    onClick={() => setMode('exchange')}
                                     className={`px-4 py-1 rounded-md font-semibold ${mode === 'exchange' ? 'bg-[#D470B7] text-white' : 'text-[#D470B7]'
-                                    }`}
-                            >
-                                Exchange
+                                        }`}
+                                >
+                                    Exchange
+                                </button>
+                            </div>
+
+                            {/* From Token */}
+                            <div className="border border-[#D470B7] rounded-lg p-2 space-y-1">
+                                <label className="text-gray-700 text-sm">You Pay</label>
+                                <div className="flex justify-between items-center">
+                                    <input
+                                        type="text"
+                                        value={fromAmount}
+                                        onChange={(e) => setFromAmount(e.target.value)}
+                                        className="bg-transparent outline-none text-lg font-semibold w-full"
+                                    />
+                                    <select
+                                        value={fromToken}
+                                        onChange={(e) => setFromToken(e.target.value)}
+                                        className="ml-2 border p-2 rounded-lg outline-none appearance-none bg-transparent font-semibold text-[#D470B7]"
+                                    >
+                                        {tokens.map((token) => (
+                                            <option key={token.symbol} value={token.symbol}>
+                                                {token.icon} {token.symbol}
+                                            </option>
+                                        ))}
+                                    </select>
+                                </div>
+                            </div>
+
+                            {/* To Token */}
+                            <div className="border border-[#D470B7] rounded-lg p-2 space-y-1">
+                                <label className="text-gray-700 text-sm">You Recieve</label>
+                                <div className="flex justify-between items-center">
+                                    <input
+                                        type="text"
+                                        value={toAmount}
+                                        onChange={(e) => setToAmount(e.target.value)}
+                                        className="bg-transparent outline-none text-lg font-semibold w-full"
+                                    />
+                                    <select
+                                        value={toToken}
+                                        onChange={(e) => setToToken(e.target.value)}
+                                        className="ml-2 border p-2 rounded-lg outline-none appearance-none bg-transparent font-semibold text-[#D470B7]"
+                                    >
+                                        {tokens.map((token) => (
+                                            <option key={token.symbol} value={token.symbol}>
+                                                {token.icon} {token.symbol}
+                                            </option>
+                                        ))}
+                                    </select>
+                                </div>
+                            </div>
+
+                            {/* Exchange Rate */}
+                            <p className="text-center border border-[#D470B7] rounded-md py-1 text-sm text-gray-700">
+                                1 {toToken} = {rate} {fromToken}
+                            </p>
+
+                            {/* Connect Wallet */}
+                            <button className="w-full py-2 bg-[#D470B7] text-white font-semibold rounded-xl">
+                                Connect Wallet
                             </button>
                         </div>
-
-                        {/* From Token */}
-                            <div className="border border-[#D470B7] rounded-lg p-2 space-y-1">
-                            <label className="text-gray-700 text-sm">You Pay</label>
-                            <div className="flex justify-between items-center">
-                                <input
-                                    type="text"
-                                    value={fromAmount}
-                                    onChange={(e) => setFromAmount(e.target.value)}
-                                    className="bg-transparent outline-none text-lg font-semibold w-full"
-                                />
-                                <select
-                                    value={fromToken}
-                                    onChange={(e) => setFromToken(e.target.value)}
-                                        className="ml-2 border p-2 rounded-lg outline-none appearance-none bg-transparent font-semibold text-[#D470B7]"
-                                >
-                                    {tokens.map((token) => (
-                                        <option key={token.symbol} value={token.symbol}>
-                                            {token.icon} {token.symbol}
-                                        </option>
-                                    ))}
-                                </select>
-                            </div>
-                        </div>
-
-                        {/* To Token */}
-                            <div className="border border-[#D470B7] rounded-lg p-2 space-y-1">
-                            <label className="text-gray-700 text-sm">You Recieve</label>
-                            <div className="flex justify-between items-center">
-                                <input
-                                    type="text"
-                                    value={toAmount}
-                                    onChange={(e) => setToAmount(e.target.value)}
-                                    className="bg-transparent outline-none text-lg font-semibold w-full"
-                                />
-                                <select
-                                    value={toToken}
-                                    onChange={(e) => setToToken(e.target.value)}
-                                        className="ml-2 border p-2 rounded-lg outline-none appearance-none bg-transparent font-semibold text-[#D470B7]"
-                                >
-                                    {tokens.map((token) => (
-                                        <option key={token.symbol} value={token.symbol}>
-                                            {token.icon} {token.symbol}
-                                        </option>
-                                    ))}
-                                </select>
-                            </div>
-                        </div>
-
-                        {/* Exchange Rate */}
-                            <p className="text-center border border-[#D470B7] rounded-md py-1 text-sm text-gray-700">
-                            1 {toToken} = {rate} {fromToken}
-                        </p>
-
-                        {/* Connect Wallet */}
-                            <button className="w-full py-2 bg-[#D470B7] text-white font-semibold rounded-xl">
-                            Connect Wallet
-                        </button>
                     </div>
-                </div>
 
                     <div className="bg-white rounded-2xl shadow-lg p-4 overflow-x-auto">
                         <h2 className="text-2xl font-bold mb-4">Market History</h2>
@@ -218,8 +218,8 @@ function Overview() {
                                         <td className="p-3">
                                             <span
                                                 className={`px-2 py-1 rounded-full text-xs font-semibold ${coin.change24h > 0
-                                                        ? "bg-green-100 text-green-600"
-                                                        : "bg-red-100 text-red-600"
+                                                    ? "bg-green-100 text-green-600"
+                                                    : "bg-red-100 text-red-600"
                                                     }`}
                                             >
                                                 {coin.change24h > 0 ? "+" : ""}
@@ -277,10 +277,10 @@ function Overview() {
                             </tbody>
                         </table>
                     </div>
+                </div>
             </div>
-        </div>
         </>
     )
-    
+
 }
 export default Overview

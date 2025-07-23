@@ -3,7 +3,7 @@ import { FiSearch } from "react-icons/fi";
 import { FaBell } from "react-icons/fa";
 
 
-function Headbar({ profile, header, subHeader, search }) {
+function Headbar({ header, subHeader }) {
     return (
         <div className="justify-between gap-4 flex items-center h-fit w-full bg-gray-100">
             <div className="flex-col h-fit">
@@ -16,8 +16,9 @@ function Headbar({ profile, header, subHeader, search }) {
                     <FiSearch className="absolute ml-3 top-1/2 transform -translate-y-1/2 text-gray-500 text-xl" />
                     <input
                         type="text"
-                        name={search}
+                        name="fake-email"
                         placeholder="Search"
+                        autoComplete="off"
                         className="w-full pl-10 pr-4 py-2 border-[1.5px] rounded-xl bg-gray-100 border-gray-500"
                     />
                 </div>
