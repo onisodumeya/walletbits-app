@@ -74,20 +74,19 @@ function Register() {
                 }
             );
             const accessToken = response.data.data.accessToken;
-            const refreshToken = response.headers.authorization(" ")[1]
+            const refreshToken = response.headers.authorization.split(" ")[1];
 
             localStorage.setItem('accessToken', accessToken);
             localStorage.setItem("refreshToken", refreshToken)
+            localStorage.setItem('userEmail', email)
 
             console.log("Registration Successfull");
-            localStorage.setItem('userEmail', email)
             navigate('/otp', { state: { from: 'register' } });
 
         } catch (err) {
             setIsRegistering(false)
-            console.log("❌ Error Response:", err.response?.data);
+            console.log("❌ Error Response:", err);
             console.log("❌ Status Code:", err.response?.status);
-            console.log("❌ Headers:", err.response?.headers);
             setError(err.response?.data?.message || 'Sign-up failed. Try again.')
         }
     }
