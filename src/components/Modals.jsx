@@ -4,7 +4,7 @@ import Success from '../assets/svgs/success-icon.svg'
 
 import { Link } from 'react-router-dom'
 
-function Modal({ priBtn = true, secBtn = false, successImg = false, priBtnLink, priBtnText, secBtnLink, secBtnText, openModal, closeModal, heading, headingColor, paragragh, click, text, borderColor}) {
+function Modal({ priBtn = true, secBtn = false, successImg = false, priBtnLink, priBtnText, secBtnLink, secBtnText, openModal, closeModal, heading, headingColor, paragragh, text, borderColor}) {
 
     
 
@@ -25,7 +25,7 @@ function Modal({ priBtn = true, secBtn = false, successImg = false, priBtnLink, 
 
                         <div className='w-full flex flex-col gap-2.5'>
                             {priBtnText &&
-                                <Link to={click}>
+                                <Link to={priBtnLink}>
                                     <button className='w-full text-white bg-[#D470B7] hover:bg-[#c272ab] transition-colors duration-300 rounded-full px-3 py-2.5 cursor-pointer'>{priBtnText}</button>
                                 </Link>}
                             {secBtnText &&

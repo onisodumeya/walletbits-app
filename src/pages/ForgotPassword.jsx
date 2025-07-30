@@ -263,8 +263,9 @@ export const OTP = () => {
     }, [otpRefreshTime]);
 
     const handleResendOTP = async () => {
+        console.log(resendOTPPath);
+        
         try {
-            setIsResending(true);
             const accessToken = localStorage.getItem('accessToken');
 
             const response = await axiosInstance.post(
@@ -290,7 +291,7 @@ export const OTP = () => {
 
     const resendOTP = () => {
 
-        handleResendOTP
+        handleResendOTP()
 
         setOtpRefreshTime(refreshTime);
         setIsActive(false);

@@ -1,6 +1,6 @@
 import Headbar from "../../../components/Headbar"
 import SubMenu from "../../../components/SettingsSubMenu"
-import SideBar from "../../../components/Sidebar"
+import { SideBarDesktop } from "../../../components/Sidebar.jsx"
 
 
 const Notification = () => {
@@ -71,7 +71,7 @@ const Notification = () => {
     return(
         <div className="flex bg-gray-100 gap-5 px-5 relative">
             <div className='h-screen w-1/5 py-5 sticky top-0'>
-                <SideBar />
+                <SideBarDesktop />
             </div>
             <div className="flex flex-col gap-10 w-full py-5">
                 <Headbar header="Account Settings" />

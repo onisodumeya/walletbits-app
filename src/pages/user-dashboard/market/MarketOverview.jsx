@@ -1,9 +1,13 @@
-import Headbar from '../../components/Headbar.jsx';
-import SideBar from '../../components/Sidebar.jsx';
-import FinanceChart from '../../components/PriceChart.jsx';
-import MarketCard from '../../components/market-cards/MarketCard.jsx';
+import Headbar from '../../../components/Headbar.jsx';
+import PriceChart from '../../../components/PriceChart.jsx';
+import MarketCard from '../../../components/market-cards/MarketCard.jsx';
+import TokenValidation from '../../../utils/auth.jsx';
+import Modal from '../../../components/Modals.jsx';
 
-function Market() {
+import { SideBarDesktop, SideBarMobile } from '../../../components/Sidebar.jsx';
+import { NavLink } from 'react-router-dom'
+
+function MarketOverview() {
   const data = [
     { month: 'Jan', income: 45, expense: 30 },
     { month: 'Feb', income: 35, expense: 25 },
@@ -67,11 +71,15 @@ function Market() {
     }
   ];
 
+  
+
   return (
     <>
+
+    <SideBarMobile />
       <div className="flex bg-gray-100 gap-5 px-5 relative">
         <div className='h-screen w-1/5 py-5 sticky top-0'>
-          <SideBar />
+          <SideBarDesktop />
         </div>
 
         <div className="flex flex-col gap-5 p-6 w-full">
@@ -79,7 +87,12 @@ function Market() {
             header="Crypto Market Overview"
           />
 
-          <div className='w-full flex justify-between gap-5'>
+          <div className='flex gap-2.5 items-center'>
+            <NavLink to='/market/market-overview' end className={({ isActive }) => isActive ? 'bg-[#D470B7] rounded-lg py-2 px-4 text-white' : 'rounded-lg py-2 px-4'}>Market Overview</NavLink>
+            <NavLink to='/market/converter' end className={({ isActive }) => isActive ? 'bg-[#D470B7] rounded-lg py-2 px-4 text-white' : 'rounded-lg py-2 px-4'}>Converter</NavLink>
+          </div>
+
+          <div className='w-full flex flex-col md:flex-row justify-between gap-5'>
             <MarketCard title='Total Market Cap' amount='$58.1T' percentage='22.87%' />
             <MarketCard title='24h Volume' amount='$5.6B' percentage='22.87%' />
             <MarketCard title='Bitcoin Dominance' amount='23.5%' percentage='22.87%' />
@@ -125,7 +138,7 @@ function Market() {
           </div>
 
           <div className="w-full">
-            <FinanceChart
+            <PriceChart
               gap={5}
               size={20}
               data={data}
@@ -141,4 +154,4 @@ function Market() {
   );
 }
 
-export default Market;
+export default MarketOverview;
