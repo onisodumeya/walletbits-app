@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { useMediaQuery } from 'react-responsive'
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
@@ -11,6 +11,8 @@ import PngTube from '../assets/pngs/Youtube.png'
 import PngLink from '../assets/pngs/linked.png'
 import PngInsta from '../assets/pngs/Instagram.png'
 import Facebook from '../assets/pngs/Facebook.png'
+import Modal from './Modals'
+import axios from 'axios'
 
 
 
@@ -43,26 +45,55 @@ function Footer() {
     );
   }, []);
 
+  const [email, setEmail] = useState('');
+
+  const subscribeNewsletter = async () => {
+    
+    try {
+      const response = await axios.post("https://api-walletbits.82.29.170.171.nip.io/api/v1/newsletter/subscribe", 
+        { email },
+        {
+          headers: {
+            'Content-type': 'application/json'
+          }
+        }
+      );
+
+      console.log("Email sent successfully");
+
+      const something = response.data;
+      console.log(something);
+      
+      
+      
+
+    } catch (error) {
+      console.log("Problem subscribing to newsletter: ". error);
+      
+    }
+  }
+
 
   return (
     <footer ref={footerRef} className={`${isMobile ? 'px-0': 'pt-10 px-5 md:px-15 opacity-0'}`}>
       <div className={`${isMobile ? 'foot rounded-none' : 'foot rounded-t-4xl'}`}>
 
         <div className={`${isMobile ? 'flex-col' : 'flex-row'} flex  border border-green-500  w-full p-5 gap-10 justify-between`}>
-          <div className={`${isMobile ? 'w-full' : 'w-1/2'} sections flex flex-col w-1/2" id="fir`}>
+          <div className={`${isMobile ? 'w-full' : 'w-1/2'} sections flex flex-col w-1/2"`}>
             <h1 className="text-2xl mb-5">WALLETBITS</h1>
             <p className="mb-5 text-gray-50 text-[14px]">Join our newsletter to get notified about all new releases and features.</p>
-            <form className="mb-5">
+            <div className="mb-5">
               <input
                 type="email"
                 name="email"
                 id="email"
                 placeholder="Enter your email"
                 required
+                onChange={(e) => setEmail(e.target.value)}
               />
-              <button type="submit" id="btn">Subscribe</button>
+              <button onClick={subscribeNewsletter} type="submit" id="btn">Subscribe</button>
 
-            </form>
+            </div>
             <p className="text-[14px]">
               By subscribing, you agree to our <Link tp="#"><u>Privacy Policy</u></Link> and
               provide consent to receive updates from our company.

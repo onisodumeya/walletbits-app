@@ -1,6 +1,9 @@
 import ImageBg from '../../components/AuthImageBg.jsx'
 import Modal from '../../components/Modals.jsx'
+import Google from '../../assets/svgs/google.svg'
+import Apple from '../../assets/svgs/apple.svg'
 import axios from 'axios'
+
 import { AuthForm, Input } from '../../components/AuthForm.jsx'
 import { useState, useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
@@ -74,10 +77,10 @@ function Register() {
                 }
             );
             const accessToken = response.data.data.accessToken;
-            const refreshToken = response.headers.authorization.split(" ")[1];
+            const refreshToken = response.headers.authorization;
 
             localStorage.setItem('accessToken', accessToken);
-            localStorage.setItem("refreshToken", refreshToken)
+            console.log("refreshToken: ", refreshToken)
             localStorage.setItem('userEmail', email)
 
             console.log("Registration Successfull");
@@ -148,7 +151,21 @@ function Register() {
 
                             </>
                         }
+
                         extra={<p className={`text-start ${messageColor}`}>{message}</p>}
+
+                        extraButtons={
+                            <>
+                                <button className='flex gap-2 border border-[#E6E6E6] rounded-full py-2 w-full justify-center cursor-pointer hover:border-black transition duration-300'>
+                                    <img src={Google} alt="" />
+                                    <p>Login with Google</p>
+                                </button>
+                                <button className='flex gap-2 border border-[#E6E6E6] rounded-full py-2 w-full justify-center cursor-pointer hover:border-black transition duration-300'>
+                                    <img src={Apple} alt="" />
+                                    <p>Login with Apple</p>
+                                </button>
+                            </>
+                        }
 
                         buttonText={isRegistering ? "Registering..." : "Sign up"}
                         click={handleRegistration}

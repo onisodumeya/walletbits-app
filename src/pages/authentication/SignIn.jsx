@@ -53,9 +53,13 @@ function SignIn(){
             const accessToken = response.data.data.accessToken;
             const refreshToken = response.headers.authorization.split(" ")[1];
 
-            console.log('Access Token:', accessToken);
-            console.log('Refresh Token:', refreshToken);
+            const username = response.data.data.user.username;
+            
 
+            // console.log('Access Token:', accessToken);
+            // console.log('Refresh Token:', refreshToken);
+
+            localStorage.setItem('username', username)
             localStorage.setItem('userEmail', email);
             localStorage.setItem('accessToken', accessToken);
             localStorage.setItem('refreshToken', refreshToken);
@@ -129,7 +133,7 @@ function SignIn(){
 
                     extraButtons={
                         <>
-                            <button className='flex gap-2 border border-[#E6E6E6] rounded-full py-2 w-full justify-center cursor-pointer hover:border-black transition duration-300'>
+                            <button  className='flex gap-2 border border-[#E6E6E6] rounded-full py-2 w-full justify-center cursor-pointer hover:border-black transition duration-300'>
                                     <img src={Google} alt="" />
                                     <p>Login with Google</p>
                                 </button>
