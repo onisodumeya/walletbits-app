@@ -8,6 +8,8 @@ import { Link, useNavigate } from 'react-router-dom';
 import {AuthForm, Input} from '../../components/AuthForm.jsx'
 import { useState, useEffect, useRef } from 'react'
 
+const baseURL = import.meta.env.VITE_API_BASE_URL;
+
 function SignIn(){
 
     const [isModalopen, setCloseModal] = useState(false);
@@ -42,7 +44,7 @@ function SignIn(){
         setIsLoggingIn(true)
 
         try {
-            const response = await axios.post('https://api-walletbits.82.29.170.171.nip.io/api/v1/auth/login', {
+            const response = await axios.post(`${baseURL}/auth/login`, {
                 email, 
                 password
             }, {

@@ -1,9 +1,9 @@
-import Adminbar from "../../components/AdminBar";
+import AdminSidebar from "../../components/AdminSideBar";
 
 
 function AdminDashboard() {
     return(<>
-     <div className="w-[20%]"><Adminbar /></div>
+     <div className="w-[20%]"><AdminSidebar /></div>
     </>)
 }
 export default AdminDashboard
