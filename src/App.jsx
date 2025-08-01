@@ -9,11 +9,13 @@ import Notification from './pages/user-dashboard/settings/Notification.jsx';
 import Verification from './pages/user-dashboard/settings/Verification.jsx';
 import ProfileSettings from './pages/user-dashboard/settings/ProfileSettings.jsx';
 import PasswordSettings from './pages/user-dashboard/settings/PasswordSettings.jsx';
+import Transaction from './pages/user-dashboard/Transaction.jsx';
+import AdminDashboard from './pages/Admin/Admindashboard.jsx';
+import Converter from './pages/user-dashboard/market/Converter.jsx';
+import MarketOverview from './pages/user-dashboard/market/MarketOverview.jsx';
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ForgotPassword, OTP } from './pages/ForgotPassword.jsx';
-import Transaction from './pages/user-dashboard/Transaction.jsx';
-import AdminDashboard from './pages/Admin/Admindashboard.jsx';
 
 function App() {
   return (
@@ -33,7 +35,9 @@ function App() {
         <Route path="/settings/notifications" element={<Notification />} />
         <Route path="/settings/profile-settings" element={<ProfileSettings />} />
         <Route path="/settings/password" element={<PasswordSettings />} />
-         <Route path="/AdminDashboard" element={<AdminDashboard />} />
+        <Route path="/AdminDashboard" element={<AdminDashboard />} />
+        <Route path="/market/converter" element={<Converter />} />
+        <Route path="/market/market-overview" element={<MarketOverview />} />
       </Routes>
     </Router>
   );
