@@ -8,12 +8,12 @@ import Overview from './pages/user-dashboard/Overview.jsx';
 import Notification from './pages/user-dashboard/settings/Notification.jsx';
 import Verification from './pages/user-dashboard/settings/Verification.jsx';
 import ProfileSettings from './pages/user-dashboard/settings/ProfileSettings.jsx';
-import Market from './pages/user-dashboard/Market.jsx';
 import PasswordSettings from './pages/user-dashboard/settings/PasswordSettings.jsx';
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ForgotPassword, OTP } from './pages/ForgotPassword.jsx';
 import Transaction from './pages/user-dashboard/Transaction.jsx';
+import AdminDashboard from './pages/Admin/Admindashboard.jsx';
 
 function App() {
   return (
@@ -33,7 +33,7 @@ function App() {
         <Route path="/settings/notifications" element={<Notification />} />
         <Route path="/settings/profile-settings" element={<ProfileSettings />} />
         <Route path="/settings/password" element={<PasswordSettings />} />
-        <Route path="/market" element={<Market />} />
+         <Route path="/AdminDashboard" element={<AdminDashboard />} />
       </Routes>
     </Router>
   );
