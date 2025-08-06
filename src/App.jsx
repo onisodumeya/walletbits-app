@@ -16,7 +16,8 @@ import MarketOverview from "./pages/user-dashboard/market/MarketOverview.jsx";
 import OTP from "./pages/Otp.jsx";
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { ForgotPassword } from "./pages/ForgotPassword.jsx";
+import { ForgotPassword, OTP } from "./pages/ForgotPassword.jsx";
+import User from "./pages/Admin/User.jsx";
 
 function App() {
   return (
@@ -42,6 +43,7 @@ function App() {
         <Route path="/AdminDashboard" element={<AdminDashboard />} />
         <Route path="/market/converter" element={<Converter />} />
         <Route path="/market/market-overview" element={<MarketOverview />} />
+        <Route path="/profile" element={<User />} />
       </Routes>
     </Router>
   );

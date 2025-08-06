@@ -21,8 +21,8 @@
     
         ]
         return (
-            <div className=" h-full w-full bg-white shadow-md shadow-gray-200 rounded-2xl flex flex-col justify-between py-5 px-2.5">
-                <div className="text-left">
+            <div className=" h-full w-full bg-white shadow-md shadow-gray-200 rounded-2xl flex flex-col justify-between py-5 px-2.5 sticky">
+                <div className="text-left ml-4 mr-4 mb-4">
                     <h1 className="text-xl font-bold text-pink-500">WALLETBITS</h1>
                 </div>
                 <div className="flex-1 w-full flex flex-col justify-center">
