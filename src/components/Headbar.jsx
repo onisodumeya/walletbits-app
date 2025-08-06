@@ -5,7 +5,7 @@ import { FaBell } from "react-icons/fa";
 
 function Headbar({ header, subHeader }) {
     return (
-        <div className="justify-between gap-4 flex items-center h-fit w-full bg-gray-100">
+        <div className="justify-between gap-4 flex items-center h-fit w-full bg-white">
             <div className="flex-col h-fit">
                 <h1 className="font-bold text-2xl text-black">{header}</h1>
                 {subHeader && <p className="text-gray-500">{subHeader}</p>}
