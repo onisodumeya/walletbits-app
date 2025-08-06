@@ -1,29 +1,29 @@
 @import "tailwindcss";
 
-:root{
+:root {
     --primary-color: #9B3B91;
     --dark: #000000;
     --dark-grey: #6d6d6d;
     --light-grey: #F0F0F0;
 }
 
-body{
+body {
     min-height: 100vh;
     font-family: 'Inter', sans-serif;
 }
 
-.nav-links:hover{
+.nav-links:hover {
     border-bottom: 2px solid var(--dark);
 }
 
-.linear-bg{
+.linear-bg {
     background: linear-gradient(to right, #9B3B91BF, #383335F2, #9B3B91BF);
 }
 
-.cards{
+.cards {
     display: flex;
     flex-direction: column;
-    background:linear-gradient(to right, #9B3B91BF, #383335F2, #9B3B91BF);
+    background: linear-gradient(to right, #9B3B91BF, #383335F2, #9B3B91BF);
     justify-content: center;
     justify-self: center;
     align-self: center;
@@ -32,11 +32,11 @@ body{
     border-radius: 20px;
 }
 
-.header{
+.header {
     font-size: 25px;
 }
 
-.desk{
+.desk {
     height: auto;
     width: 100%;
     color: white;
@@ -46,11 +46,11 @@ body{
     background: linear-gradient(to right, #9B3B91BF, #383335F2, #9B3B91BF);
 }
 
-.card-img{
+.card-img {
     width: 35%;
 }
 
-.cardbutton{
+.cardbutton {
     background-color: #000000;
     color: white;
     border-radius: 16px;
@@ -61,18 +61,18 @@ body{
     cursor: pointer;
 }
 
-.cardbutton:hover{
+.cardbutton:hover {
     background-color: #353535;
 }
 
-@media (max-width: 768px){
-    .cards{
+@media (max-width: 768px) {
+    .cards {
         display: flex;
         flex-direction: column;
         width: 100%;
     }
 
-    .cardbutton{
+    .cardbutton {
         width: 50%;
         font-size: 18px;
         justify-self: center;
@@ -80,7 +80,7 @@ body{
     }
 }
 
-.divs{
+.divs {
     display: flex;
     flex-direction: column;
     height: 90%;
@@ -88,7 +88,7 @@ body{
     padding: 20px;
 }
 
-.foot{
+.foot {
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -99,38 +99,42 @@ body{
     font-size: 10px;
 }
 
-.sections{
+.sections {
     display: flex;
     box-sizing: border-box;
 }
-#sec{
+
+#sec {
     justify-content: space-between;
 }
-#fir{
+
+#fir {
     flex-direction: column;
     font-size: 15px;
 }
 
-#email{
+#email {
     width: 200px;
     height: 30px;
     border: 1px solid white;
     padding: 5px;
 }
-#btn{
+
+#btn {
     background-color: white;
     color: black;
     width: 70px;
     height: 30px;
 }
-@media (max-width:600px){
-.container{
-    flex-direction: column;
-}
+
+@media (max-width:600px) {
+    .container {
+        flex-direction: column;
+    }
 }
 
 
-.auth-pages{
+.auth-pages {
     scrollbar-width: none;
 }
 
@@ -149,4 +153,26 @@ body{
     outline: none;
     color: white;
     border: none;
+}
+
+/* Admin Setting Buttons */
+.admin-save-cancel-buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+}
+
+.admin-set-save-btn {
+    background-color: #c0177f;
+    padding: 7px 25px;
+    border-radius: 7px;
+    font-weight: 600;
+}
+
+.admin-set-cancel-btn {
+    background-color: #ffffff;
+    padding: 7px 25px;
+    border-radius: 7px;
+    font-weight: 600;
+    border: 1px solid #ccc;
 }

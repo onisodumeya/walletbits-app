@@ -8,6 +8,8 @@ import { Link, useNavigate, useLocation, replace } from 'react-router-dom';
 import {AuthForm, Input} from '../components/AuthForm.jsx';
 import { useState, useEffect, useRef } from 'react';
 
+const baseURL = import.meta.env.VITE_API_BASE_URL;
+
 export const ForgotPassword = () => {
     const [isModalopen, setCloseModal] = useState(false);
     const [header, setHeader] = useState('');
@@ -171,7 +173,7 @@ export const OTP = () => {
             formData.append('otp', otp);
 
             const response = await axios.post(
-                'https://api-walletbits.82.29.170.171.nip.io/api/v1/auth/verify-otp',
+                `${baseURL}/auth/verify-otp`,
                 formData,
                 {
                     headers: {
@@ -269,7 +271,7 @@ export const OTP = () => {
             const accessToken = localStorage.getItem('accessToken');
 
             const response = await axiosInstance.post(
-                `/auth/${resendOTPPath}`,
+                `${baseURL}/auth/${resendOTPPath}`,
                 {},
                 {
                     headers: {

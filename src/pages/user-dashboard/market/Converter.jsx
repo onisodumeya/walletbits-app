@@ -1,7 +1,6 @@
 import Headbar from '../../../components/Headbar.jsx';
 import PriceChart from '../../../components/PriceChart.jsx';
 import MarketCard from '../../../components/market-cards/MarketCard.jsx';
-import TokenValidation from '../../../utils/auth.jsx';
 
 import { SideBarDesktop } from '../../../components/Sidebar.jsx';
 import { NavLink } from 'react-router-dom'

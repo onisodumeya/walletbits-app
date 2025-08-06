@@ -9,6 +9,8 @@ import { useState, useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { FaEye, FaEyeSlash } from 'react-icons/fa'
 
+const baseURL = import.meta.env.VITE_API_BASE_URL;
+
 function Register() {
     const [isModalopen, setCloseModal] = useState(false)
 
@@ -68,7 +70,7 @@ function Register() {
             formData.append("password", password);
 
             const response = await axios.post(
-                'https://api-walletbits.82.29.170.171.nip.io/api/v1/auth/signup',
+                `${baseURL}/auth/signup`,
                 formData,
                 {
                     headers: {

@@ -1,11 +1,10 @@
-
     import { MdDashboard,MdReport } from "react-icons/md";
     import {FaCreditCard, FaWallet, FaUser, FaWhmcs, FaShoppingBag } from "react-icons/fa";
     import { FaArrowRightFromBracket } from "react-icons/fa6";
     import { RiCustomerService2Line } from 'react-icons/ri';
     import { NavLink, useLocation } from "react-router-dom";
     
-    function Adminbar() { 
+    function AdminSidebar() { 
     
         const location = useLocation();
         
@@ -42,5 +41,5 @@
         );
     }
     
-    export default Adminbar;
+    export default AdminSidebar;
     

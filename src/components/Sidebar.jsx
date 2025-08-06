@@ -9,10 +9,8 @@ export const SideBarDesktop = () => {
     const location = useLocation();
     
     const menuItems = [
-        { name: "Dashboard", link: "/overview", icon: <MdDashboard />, active: location.pathname === "/overview" },
+        { name: "Overview", link: "/overview", icon: <MdDashboard />, active: location.pathname === "/overview" },
         { name: "Transaction History", link: "/transaction-history", icon: <FaHistory />, active: location.pathname === "/transaction-history", },
-        { name: "Wallet", link: "/wallet", icon: <FaWallet />, active: location.pathname === "/wallet", },
-        { name: "Profile", link: "/profile", icon: <FaUser />, active: location.pathname === "/profile", },
         { name: "Settings", link: "/settings/profile-settings", icon: <FaWhmcs />, active: location.pathname.startsWith("/settings"), },
         { name: "Market", link: "/market/market-overview", icon: <FaShoppingBag />, active: location.pathname.startsWith("/market"), },
         { name: "Logout", link: "/logout", icon: <FaArrowRightFromBracket className="rotate-180" /> },
@@ -45,7 +43,7 @@ export const SideBarMobile = () => {
     const location = useLocation();
     
     const menuItems = [
-        { name: "Dashboard", link: "/overview", icon: <MdDashboard />, active: location.pathname === "/overview" },
+        { name: "Overview", link: "/overview", icon: <MdDashboard />, active: location.pathname === "/overview" },
         { name: "Transaction", link: "/transaction-history", icon: <FaHistory />, active: location.pathname === "/transaction-history", },
         { name: "Wallet", link: "/wallet", icon: <FaWallet />, active: location.pathname === "/wallet", },
         { name: "Settings", link: "/settings/profile-settings", icon: <FaWhmcs />, active: location.pathname.startsWith("/settings"), },
