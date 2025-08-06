@@ -68,7 +68,7 @@ export const SideBarDesktop = () => {
       localStorage.removeItem("refreshToken");
       localStorage.removeItem("username");
 
-      window.location.href = "/sign-in";
+      window.location.href = "/";
     } catch (error) {
       console.error("Logout error: ", error.message);
     }
