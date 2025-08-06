@@ -16,7 +16,7 @@ import MarketOverview from "./pages/user-dashboard/market/MarketOverview.jsx";
 import OTP from "./pages/Otp.jsx";
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { ForgotPassword, OTP } from "./pages/ForgotPassword.jsx";
+import { ForgotPassword } from "./pages/ForgotPassword.jsx";
 import User from "./pages/Admin/User.jsx";
 
 function App() {
