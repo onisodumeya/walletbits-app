@@ -17,6 +17,7 @@ import Footer from "../components/Footer.jsx";
 import image from '../assets/pngs/img1.png';
 import imag from '../assets/pngs/img2.png';
 import imags from '../assets/pngs/img3.png';
+import axios from "axios";
 
 function Home() {
 

@@ -1,17 +1,17 @@
-import { BarChart, Bar, XAxis, YAxis, Tooltip, LineChart, Line, ResponsiveContainer } from 'recharts';
+import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts';
 
 
-function FinanceChart({data, gap, size}) {
+function PriceChart({data, gap, size, title}) {
     return(
         <div className='bg-white text-[#000000B2] shadow-md shadow-gray-200 h-fit w-full p-5 rounded-3xl flex flex-col gap-5'>
         
                                 <div className='flex justify-between w-full h-fit'>
-                                        <h3 className='text-2xl font-semibold'>Finance</h3>
+                                        <h3 className='text-2xl font-semibold'>{title}</h3>
                                         <select className="rounded-full px-3 py-1 bg-[#D470B7] text-white custom-select">
                                             <option>Today</option>
                                             <option>This Week</option>
                                             <option>This Month</option>
-                                            <option>Year Year</option>
+                                            <option>This Year</option>
                                         </select>
                                 </div>
                                 
@@ -26,8 +26,8 @@ function FinanceChart({data, gap, size}) {
                                     </div>
                                 </div>
         
-                                <ResponsiveContainer width="100%" height={300}>
-                                    <BarChart data={data} margin={{ top: 0, right: 0, left: 0, bottom: 0 }} barGap={gap} barSize={size}>
+                                <ResponsiveContainer className='w-full' height={300}>
+                                    <BarChart data={data} margin={{ top: 0, right: 0, left: -25, bottom: 0 }} barGap={gap} barSize={size}>
                                         <XAxis dataKey="month" />
                                         <YAxis tickFormatter={(value) => `$${value}`} />
                                         <Tooltip formatter={(value) => `$${value}`} />
@@ -41,4 +41,4 @@ function FinanceChart({data, gap, size}) {
     )
 }
 
-export default FinanceChart
+export default PriceChart
